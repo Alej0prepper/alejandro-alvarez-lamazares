@@ -88,7 +88,7 @@ export default function Daily64Client() {
     const onKeyDown = (event: KeyboardEvent) => {
       const target = event.target as HTMLElement | null;
       if (target && (target.tagName === "INPUT" || target.tagName === "TEXTAREA")) return;
-      if (event.key.toLowerCase() === "p") window.location.href = "/daily/62";
+      if (event.key.toLowerCase() === "p") window.location.href = "/daily/63";
     };
 
     window.addEventListener("keydown", onKeyDown);
@@ -125,8 +125,8 @@ export default function Daily64Client() {
           </nav>
 
           <div className={styles.actions}>
-            <Link className={styles.btn} href="/daily/62">
-              <span className={styles.kbd}>←</span> Dia 62
+            <Link className={styles.btn} href="/daily/63">
+              <span className={styles.kbd}>←</span> Dia 63
             </Link>
             <Link className={`${styles.btn} ${styles.primary}`} href="#idea">
               Empezar

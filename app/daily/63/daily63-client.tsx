@@ -6,21 +6,59 @@ import styles from "../daily-lesson.module.css";
 
 const tocItems = [
   { id: "idea", label: "1) Idea" },
-  { id: "ejemplo", label: "2) Ejemplo" },
-  { id: "mentalidad", label: "3) Mentalidad" },
-  { id: "dotnet", label: "4) .NET" },
-  { id: "testing", label: "5) Testing" },
-  { id: "takeaway", label: "Takeaway" },
+  { id: "definition", label: "2) Definicion" },
+  { id: "mistake", label: "3) Error comun" },
+  { id: "example", label: "4) Ejemplo" },
+  { id: "what-to-log", label: "5) Que loggear" },
+  { id: "dotnet", label: "6) .NET" },
+  { id: "do-not-log", label: "7) Que no loggear" },
+  { id: "mindset", label: "8) Mentalidad backend" },
+  { id: "monitoring", label: "9) Monitoreo" },
+  { id: "tools", label: "10) Herramientas" },
+  { id: "testing", label: "11) Testing" },
+  { id: "mini-project", label: "Practica" },
 ] as const;
 
-const mainSnippet = `// TODO: Agrega snippet principal de la leccion`;
+const loginEndpointSnippet = `POST /login`;
 
-const secondarySnippet = `// TODO: Agrega snippet secundario si aplica`;
+const bruteForceLogSnippet = `1000 intentos desde misma IP`;
 
-const checklistSnippet = `[ ] Caso 1
-[ ] Caso 2
-[ ] Caso 3
-[ ] Caso 4`;
+const authEventsSnippet = `login exitoso
+login fallido
+logout`;
+
+const authorizationEventsSnippet = `acceso denegado`;
+
+const criticalActionsSnippet = `refunds
+delete user
+role changes`;
+
+const importantErrorsSnippet = `500s
+exceptions
+timeouts`;
+
+const rateLimitSnippet = `429 Too Many Requests`;
+
+const basicLoggingSnippet = `_logger.LogInformation("Usuario {UserId} inicio sesion", userId);`;
+
+const errorLoggingSnippet = `_logger.LogError(ex, "Error procesando pedido");`;
+
+const warningLoggingSnippet = `_logger.LogWarning("Multiples intentos fallidos desde IP {Ip}", ip);`;
+
+const dangerousJwtSnippet = `_logger.LogInformation("JWT: {Token}", token);`;
+
+const badLogsSnippet = `"Error"
+"Algo salio mal"`;
+
+const miniProjectEventsSnippet = `login success
+login fail
+rate limit`;
+
+const miniProjectDangerSnippet = `password
+JWT completo
+secretos`;
+
+const failedLoginsSnippet = `1000 logins fallidos`;
 
 export default function Daily63Client() {
   const [activeSection, setActiveSection] = useState<string>("idea");
@@ -101,18 +139,23 @@ export default function Daily63Client() {
           <article className={styles.card}>
             <div className={styles.bd}>
               <div className={styles.dailyHero}>
+                <div className={styles.createdAt}>08/05/2026</div>
                 <div className={styles.badge}>Daily #63 • Backend Foundations</div>
-                <h2 className={styles.title}>Logging Y Monitoreo: Como Detectar Ataques Y Abuso</h2>
+                <h2 className={styles.title}>Logging y monitoreo: como detectar ataques y abuso</h2>
 
                 <div className={styles.meta} aria-label="Metadata">
-                  <span className={`${styles.chip} ${styles.chipOk}`}>3-6 min</span>
-                  <span className={styles.chip}>Nivel: Principiante</span>
-                  <span className={`${styles.chip} ${styles.chipPro}`}>Tag: TODO</span>
-                  <span className={styles.chip}>Tag: TODO</span>
-                  <span className={styles.chip}>Tag: .NET</span>
+                  <span className={`${styles.chip} ${styles.chipOk}`}>5-10 min</span>
+                  <span className={styles.chip}>Nivel: Intermedio</span>
+                  <span className={`${styles.chip} ${styles.chipPro}`}>Tag: Seguridad</span>
+                  <span className={styles.chip}>Tag: Logging</span>
+                  <span className={styles.chip}>Tag: Monitoreo</span>
+                  <span className={styles.chip}>Tag: Observabilidad</span>
                 </div>
 
-                <p className={styles.lead}>TODO: Mensaje principal de la leccion.</p>
+                <p className={styles.lead}>
+                  Puedes tener buena seguridad, pero si no sabes que esta pasando, no puedes detectar abuso ni
+                  investigar incidentes.
+                </p>
               </div>
 
               <nav className={styles.toc} aria-label="Indice">
@@ -127,133 +170,278 @@ export default function Daily63Client() {
                 <div className={styles.shd}>
                   <div>
                     <h3>1. La idea clave</h3>
-                    <p className={styles.sub}>TODO: Concepto central.</p>
+                    <p className={styles.sub}>Sin visibilidad, tu backend opera a ciegas.</p>
                   </div>
                   <span className={styles.chip}>Concepto</span>
                 </div>
                 <div className={styles.sbd}>
-                  <div className={styles.callout}>TODO: Frase de impacto para esta seccion.</div>
+                  <div className={styles.callout}>Si no sabes lo que esta pasando, estas ciego.</div>
                 </div>
               </section>
 
-              <section className={styles.section} id="ejemplo">
+              <section className={styles.section} id="definition">
                 <div className={styles.shd}>
                   <div>
-                    <h3>2. Ejemplo</h3>
-                    <p className={styles.sub}>TODO: Escenario practico.</p>
+                    <h3>2. Definicion clara</h3>
+                    <p className={styles.sub}>Logging registra eventos; monitoreo observa patrones.</p>
+                  </div>
+                  <span className={styles.chip}>Definicion</span>
+                </div>
+                <div className={styles.sbd}>
+                  <h4>Logging</h4>
+                  <div className={styles.quote}>Registrar eventos importantes del sistema.</div>
+
+                  <h4>Monitoreo</h4>
+                  <div className={styles.quote}>Observar esos eventos para detectar problemas, abuso o ataques.</div>
+                </div>
+              </section>
+
+              <section className={styles.section} id="mistake">
+                <div className={styles.shd}>
+                  <div>
+                    <h3>3. El error mas comun</h3>
+                    <p className={styles.sub}>Creer que los logs solo sirven para errores.</p>
+                  </div>
+                  <span className={styles.chip}>Antipatron</span>
+                </div>
+                <div className={styles.sbd}>
+                  <p>Tambien sirven para:</p>
+                  <ul className={styles.bullets}>
+                    <li>detectar ataques</li>
+                    <li>detectar abuso</li>
+                    <li>investigar incidentes</li>
+                    <li>entender comportamiento sospechoso</li>
+                  </ul>
+                </div>
+              </section>
+
+              <section className={styles.section} id="example">
+                <div className={styles.shd}>
+                  <div>
+                    <h3>4. Ejemplo real</h3>
+                    <p className={styles.sub}>Un patron en logs puede revelar un ataque activo.</p>
                   </div>
                   <span className={styles.chip}>Escenario</span>
                 </div>
                 <div className={styles.sbd}>
-                  <ul className={styles.bullets}>
-                    <li>TODO: Punto 1.</li>
-                    <li>TODO: Punto 2.</li>
-                  </ul>
-                  <pre>{mainSnippet}</pre>
+                  <pre>{loginEndpointSnippet}</pre>
+                  <p>Y ves en logs:</p>
+                  <pre>{bruteForceLogSnippet}</pre>
+                  <p>Probablemente estas viendo brute force.</p>
                 </div>
               </section>
 
-              <section className={styles.section} id="mentalidad">
+              <section className={styles.section} id="what-to-log">
                 <div className={styles.shd}>
                   <div>
-                    <h3>3. Como piensa un backend developer</h3>
-                    <p className={styles.sub}>TODO: Criterio para decisiones tecnicas.</p>
+                    <h3>5. Que deberias loggear</h3>
+                    <p className={styles.sub}>Registra eventos que ayuden a detectar abuso y reconstruir incidentes.</p>
                   </div>
-                  <span className={styles.chip}>Mentalidad</span>
+                  <span className={styles.chip}>Checklist</span>
                 </div>
                 <div className={styles.sbd}>
-                  <ul className={styles.bullets}>
-                    <li>TODO: Pregunta 1?</li>
-                    <li>TODO: Pregunta 2?</li>
-                    <li>TODO: Pregunta 3?</li>
-                  </ul>
+                  <h4>Autenticacion</h4>
+                  <pre>{authEventsSnippet}</pre>
+
+                  <h4>Autorizacion</h4>
+                  <pre>{authorizationEventsSnippet}</pre>
+
+                  <h4>Acciones criticas</h4>
+                  <pre>{criticalActionsSnippet}</pre>
+
+                  <h4>Errores importantes</h4>
+                  <pre>{importantErrorsSnippet}</pre>
+
+                  <h4>Rate limiting</h4>
+                  <pre>{rateLimitSnippet}</pre>
+                  <p>Muy util para detectar abuso.</p>
                 </div>
               </section>
 
               <section className={styles.section} id="dotnet">
                 <div className={styles.shd}>
                   <div>
-                    <h3>4. Como se ve en .NET</h3>
-                    <p className={styles.sub}>TODO: Implementacion practica.</p>
+                    <h3>6. Como se ve en .NET</h3>
+                    <p className={styles.sub}>Usa severidad y contexto para que el log sea investigable.</p>
                   </div>
                   <span className={styles.chip}>Implementacion</span>
                 </div>
                 <div className={styles.sbd}>
+                  <h4>Logging basico</h4>
+                  <pre>{basicLoggingSnippet}</pre>
+
+                  <h4>Error</h4>
+                  <pre>{errorLoggingSnippet}</pre>
+
+                  <h4>Warning sospechoso</h4>
+                  <pre>{warningLoggingSnippet}</pre>
+
+                  <div className={styles.callout}>Los logs deben ayudarte a responder: que paso?</div>
+                </div>
+              </section>
+
+              <section className={styles.section} id="do-not-log">
+                <div className={styles.shd}>
+                  <div>
+                    <h3>7. Que no deberias loggear</h3>
+                    <p className={styles.sub}>Los logs no deben convertirse en una fuga de secretos.</p>
+                  </div>
+                  <span className={`${styles.chip} ${styles.chipPro}`}>Critico</span>
+                </div>
+                <div className={styles.sbd}>
+                  <p>Nunca registres:</p>
                   <ul className={styles.bullets}>
-                    <li>TODO: Regla 1.</li>
-                    <li>TODO: Regla 2.</li>
-                    <li>TODO: Regla 3.</li>
+                    <li>passwords</li>
+                    <li>tokens completos</li>
+                    <li>API keys</li>
+                    <li>secretos</li>
+                    <li>datos sensibles innecesarios</li>
                   </ul>
-                  <pre>{secondarySnippet}</pre>
+
+                  <h4>Ejemplo peligroso</h4>
+                  <pre>{dangerousJwtSnippet}</pre>
+                  <p>Esto es grave porque expone credenciales reutilizables.</p>
+                </div>
+              </section>
+
+              <section className={styles.section} id="mindset">
+                <div className={styles.shd}>
+                  <div>
+                    <h3>8. Como piensa un backend developer</h3>
+                    <p className={styles.sub}>No imprime mensajes: deja evidencia util para investigar.</p>
+                  </div>
+                  <span className={styles.chip}>Mentalidad</span>
+                </div>
+                <div className={styles.sbd}>
+                  <ul className={styles.bullets}>
+                    <li>No: &quot;voy a imprimir mensajes&quot;.</li>
+                    <li>Si: &quot;si manana hay un incidente, podre investigarlo?&quot;.</li>
+                  </ul>
+                </div>
+              </section>
+
+              <section className={styles.section} id="monitoring">
+                <div className={styles.shd}>
+                  <div>
+                    <h3>9. Monitoreo</h3>
+                    <p className={styles.sub}>Logging sin monitoreo es ruido.</p>
+                  </div>
+                  <span className={styles.chip}>Observabilidad</span>
+                </div>
+                <div className={styles.sbd}>
+                  <p>Monitoreo es detectar patrones:</p>
+                  <ul className={styles.bullets}>
+                    <li>muchos 401</li>
+                    <li>muchos 500</li>
+                    <li>muchos logins</li>
+                    <li>picos de trafico</li>
+                    <li>endpoints lentos</li>
+                  </ul>
+                  <p>Esas senales pueden indicar ataque o fallo.</p>
+                </div>
+              </section>
+
+              <section className={styles.section} id="tools">
+                <div className={styles.shd}>
+                  <div>
+                    <h3>10. Herramientas comunes</h3>
+                    <p className={styles.sub}>No necesitas dominarlas ahora, pero conviene reconocerlas.</p>
+                  </div>
+                  <span className={styles.chip}>Herramientas</span>
+                </div>
+                <div className={styles.sbd}>
+                  <ul className={styles.bullets}>
+                    <li>Serilog</li>
+                    <li>Seq</li>
+                    <li>ELK Stack</li>
+                    <li>Datadog</li>
+                    <li>Grafana</li>
+                    <li>Application Insights</li>
+                  </ul>
                 </div>
               </section>
 
               <section className={styles.section} id="testing">
                 <div className={styles.shd}>
                   <div>
-                    <h3>5. Como lo detectas como tester</h3>
-                    <p className={styles.sub}>TODO: Riesgos y pruebas clave.</p>
+                    <h3>11. Como lo detectas como tester</h3>
+                    <p className={styles.sub}>Evalua si los logs dan visibilidad sin filtrar secretos.</p>
                   </div>
                   <span className={styles.chip}>Testing</span>
                 </div>
                 <div className={styles.sbd}>
                   <ul className={styles.bullets}>
-                    <li>TODO: Riesgo 1.</li>
-                    <li>TODO: Riesgo 2.</li>
-                    <li>TODO: Riesgo 3.</li>
+                    <li>Se registran eventos importantes?</li>
+                    <li>Los logs ayudan o son inutiles?</li>
+                    <li>Se exponen secretos?</li>
+                    <li>Se pueden detectar ataques?</li>
                   </ul>
-                  <pre>{checklistSnippet}</pre>
+
+                  <div className={styles.quote}>Un ataque que no puedes ver, no puedes investigarlo.</div>
+
+                  <h4>Error tipico</h4>
+                  <pre>{badLogsSnippet}</pre>
+
+                  <h4>Buen logging debe incluir</h4>
+                  <ul className={styles.bullets}>
+                    <li>que paso</li>
+                    <li>cuando</li>
+                    <li>quien</li>
+                    <li>donde</li>
+                    <li>severidad</li>
+                  </ul>
+
+                  <div className={styles.callout}>Logging no es debug. Es observabilidad y seguridad.</div>
                 </div>
               </section>
 
-              <section className={styles.section} id="takeaway">
+              <section className={styles.section} id="mini-project">
                 <div className={styles.shd}>
                   <div>
-                    <h3>Idea que te llevas hoy</h3>
-                    <p className={styles.sub}>TODO: Cierre en una frase clara.</p>
+                    <h3>Practica guiada (5-10 min)</h3>
+                    <p className={styles.sub}>Evaluar logs desde perspectiva de seguridad.</p>
                   </div>
-                  <span className={`${styles.chip} ${styles.chipOk}`}>Cierre</span>
+                  <span className={`${styles.chip} ${styles.chipOk}`}>Ejercicio</span>
                 </div>
                 <div className={styles.sbd}>
-                  <div className={styles.quote}>TODO: Frase final memorable.</div>
+                  <h4>Objetivo</h4>
+                  <p>Detectar que eventos ayudan a investigar ataques y cuales nunca deben registrarse.</p>
 
-                  <div className={styles.footerNav}>
-                    <Link className={styles.btn} href="/daily/62">
-                      ← Dia 62
-                    </Link>
-                    <Link className={styles.btn} href="/daily">
-                      Ver archivo
-                    </Link>
-                    <Link className={`${styles.btn} ${styles.primary}`} href="/rest-lite#aprendizaje-diario">
-                      REST Lite
-                    </Link>
+                  <h4>Endpoint</h4>
+                  <pre>{loginEndpointSnippet}</pre>
+
+                  <h4>Paso 1 - Eventos importantes</h4>
+                  <p>Que deberias loggear?</p>
+                  <pre>{miniProjectEventsSnippet}</pre>
+
+                  <h4>Paso 2 - Eventos peligrosos</h4>
+                  <p>Que no deberias loggear?</p>
+                  <pre>{miniProjectDangerSnippet}</pre>
+
+                  <h4>Paso 3 - Simulacion</h4>
+                  <pre>{failedLoginsSnippet}</pre>
+                  <p>Podrias detectarlo?</p>
+
+                  <h4>Que debes notar</h4>
+                  <ul className={styles.bullets}>
+                    <li>Logs ayudan a detectar ataques.</li>
+                    <li>Malos logs filtran informacion.</li>
+                    <li>Buen monitoreo da visibilidad real.</li>
+                  </ul>
+
+                  <h4>Nivel 2</h4>
+                  <ul className={styles.bullets}>
+                    <li>Tu sistema registra intentos fallidos?</li>
+                    <li>Los logs tienen contexto util?</li>
+                  </ul>
+
+                  <div className={styles.quote}>
+                    Backend junior usa logs para debug. Backend senior usa logs para entender y proteger sistemas.
                   </div>
                 </div>
               </section>
             </div>
           </article>
-
-          <aside className={styles.sidebar}>
-            <div className={styles.card}>
-              <div className={styles.hd}>
-                <div>
-                  <h2>Resumen rapido</h2>
-                  <p>Dia 63 en una vista.</p>
-                </div>
-              </div>
-              <div className={styles.bd}>
-                <div className={styles.li}>
-                  <strong>Idea clave:</strong> TODO.
-                </div>
-                <div className={styles.li}>
-                  <strong>.NET:</strong> TODO.
-                </div>
-                <div className={styles.li}>
-                  <strong>Riesgo:</strong> TODO.
-                </div>
-              </div>
-            </div>
-          </aside>
         </div>
       </main>
     </div>
