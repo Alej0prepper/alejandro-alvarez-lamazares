@@ -65,7 +65,7 @@ async function getLessonsFromCommitFile(): Promise<CalendarLesson[]> {
     .split("\n")
     .map((line) => line.trim())
     .filter(Boolean)
-    .map((line) => {
+    .map((line): CalendarLesson | null => {
       const parts = line.split("|");
       if (parts.length < 2) return null;
 
