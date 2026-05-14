@@ -1,0 +1,87 @@
+2026-05-11 |  add lesson no 66
+2026-05-10 |  add lesson no 65
+2026-05-09 |  finishing lesson no 63 and 64
+2026-05-09 |  add lesson no 63
+2026-05-09 |  add lesson no 64
+2026-05-07 |  add lesson no 62
+2026-05-06 |  add lesson no 61
+2026-05-05 |  add windows hosts to atlas
+2026-05-05 | add lesson no 60
+2026-05-04 |  add lesson no 59
+2026-05-01 | add lesson no 58
+2026-04-30 | add lesson no 57
+2026-04-29 | add lesson no 55
+2026-04-28 |  add lesson no 55
+2026-04-27 |  add lesson no 54
+2026-04-25 |  add lesson no 53
+2026-04-24 |  add lesson no 52
+2026-04-23 |  add lesson no 51, first for security classes
+2026-04-22 | add to altas Bootstrap
+2026-04-22 | add lesson no 50
+2026-04-21 |  add lesson no 49
+2026-04-20 | add lesson no 48
+2026-04-17 |  add lesson no 47
+2026-04-16 |  delete some labels
+2026-04-16 | Revert " tests"
+2026-04-16 |  tests
+2026-04-16 |  add lesson no 46
+2026-04-15 |  add SKU to atlas
+2026-04-15 |  add lesson no 45
+2026-04-14 | add lesson no 44
+2026-04-13 |  day 44
+2026-04-10 | add lessonno 42
+2026-04-09 |  add lesson no 41
+2026-04-07 | add lesson no 40
+2026-04-06 |  add class no 39
+2026-04-02 | add lesson no 38
+2026-04-01 | add lesson no 37
+2026-03-31 | add lesson no 36
+2026-03-30 | add lesson no 35
+2026-03-27 |  add concept of tls
+2026-03-27 | add lesson no 34
+2026-03-26 | add lesson no 33
+2026-03-25 | add lesson no 32
+2026-03-24 | add lesson no 31
+2026-03-23 |  add gateway vs middleware
+2026-03-23 |  add gateway description
+2026-03-23 |  add lesson no 30
+2026-03-20 | update pendientes.md
+2026-03-20 | add search bar to atlas view
+2026-03-20 |  add guia.md in which document its written an analisis about how to get a better home page
+2026-03-20 |  delete the word concepts from de card headers
+2026-03-20 | add back button in the atlas cards
+2026-03-20 |  add lesson no 29 and change url from /concepts to /atlas
+2026-03-19 | fixing sintax error
+2026-03-19 |  add lesson no 28
+2026-03-18 | add  pendientes.md
+2026-03-18 |  add lesson no 27
+2026-03-17 | add concept ORM
+2026-03-17 | add lesson no 26
+2026-03-16 | add lesson no 25
+2026-03-14 |  add concepts model and controller
+2026-03-14 |  add concepts of dto and middleware
+2026-03-13 | add lesson no 24
+2026-03-12 | add lesson no 23
+2026-03-11 |  add lesson no 22
+2026-03-10 | add lesson no 21
+2026-03-09 |  add lesson no 20 sin logs estas ciego
+2026-03-06 | add lesson no 19
+2026-03-05 | side efects
+2026-03-04 | add lesson no 17
+2026-03-03 | add lesson no 15
+2026-03-02 | apply styles to dependency inversion and add lesson no 15
+2026-02-27 |  add lesson no 14
+2026-02-26 |  add lesson no 13
+2026-02-25 | add lesson no 12
+2026-02-24 | add lesson no 11
+2026-02-23 |  add lesson number 10
+2026-02-19 | update hero page
+2026-02-19 | Update daily resume page
+2026-02-19 | add daily lesson number 8
+2026-02-18 | changing style to look like super mario
+2026-02-18 | Add daily lesson #7
+2026-02-17 |  add day 6 lesson
+2026-02-16 | add hero page and fifth daily class
+2026-02-16 | middleware file is deprecated changed it to proxy
+2026-02-16 | apply middleware to index.html
+2026-02-16 | first commit

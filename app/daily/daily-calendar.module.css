@@ -1,0 +1,162 @@
+.page {
+  min-height: 100vh;
+  background: linear-gradient(160deg, #f4f8ff 0%, #e8f1ff 55%, #ddeaff 100%);
+  color: #10233f;
+  padding: 24px 14px 40px;
+}
+
+.shell {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.header p {
+  margin: 6px 0 0;
+  color: #385174;
+}
+
+.homeButton {
+  border: 1px solid #2f5fb2;
+  background: #2f5fb2;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 14px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.navRow {
+  display: grid;
+  grid-template-columns: 140px 1fr 140px;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.navRow h2 {
+  text-align: center;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.navButton {
+  border: 1px solid #7ea3de;
+  background: #fff;
+  color: #103064;
+  border-radius: 10px;
+  padding: 9px 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.navButton:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.weekHeader {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.weekHeader span {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: #314f7f;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.dayCell {
+  min-height: 130px;
+  background: #ffffff;
+  border: 1px solid #bfd2f2;
+  border-radius: 12px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.outMonth {
+  background: #eef4ff;
+}
+
+.dayNumber {
+  font-weight: 700;
+  color: #243f6d;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cardLink,
+.cardPlain {
+  display: block;
+  border-radius: 8px;
+  padding: 7px;
+  font-size: 13px;
+  line-height: 1.25;
+  background: #e8f1ff;
+  border: 1px solid #c9dbf9;
+}
+
+.cardLink {
+  text-decoration: none;
+  color: #0f2f60;
+  font-weight: 600;
+}
+
+.cardLink:hover {
+  background: #dce9ff;
+}
+
+@media (max-width: 980px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .weekHeader {
+    display: none;
+  }
+
+  .dayCell {
+    min-height: 110px;
+  }
+}
+
+@media (max-width: 640px) {
+  .navRow {
+    grid-template-columns: 1fr;
+  }
+
+  .navRow h2 {
+    order: -1;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
