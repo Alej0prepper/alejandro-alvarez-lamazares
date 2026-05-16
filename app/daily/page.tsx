@@ -2,6 +2,112 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import DailyCalendarClient, { type CalendarLesson } from "./daily-calendar-client";
 
+const publishedLessons: CalendarLesson[] = [
+  {
+    date: "2026-05-06",
+    title: "Leccion 61: Validacion de input: la primera linea de defensa",
+    href: "/daily/61",
+  },
+  {
+    date: "2026-05-07",
+    title: "Leccion 62: Endpoints criticos: que proteger primero",
+    href: "/daily/62",
+  },
+  {
+    date: "2026-05-08",
+    title: "Leccion 63: Logging y monitoreo: como detectar ataques y abuso",
+    href: "/daily/63",
+  },
+  {
+    date: "2026-05-09",
+    title: "Leccion 64: Seguridad en integraciones externas y APIs de terceros",
+    href: "/daily/64",
+  },
+  {
+    date: "2026-05-10",
+    title: "Leccion 65: SQL Injection: como romper una base de datos desde input",
+    href: "/daily/65",
+  },
+  {
+    date: "2026-05-11",
+    title: "Leccion 66: Seguridad en uploads y manejo de archivos",
+    href: "/daily/66",
+  },
+  {
+    date: "2026-05-12",
+    title: "Leccion 67: Principio de minimo privilegio: menos acceso = mas seguridad",
+    href: "/daily/67",
+  },
+  {
+    date: "2026-05-13",
+    title: "Leccion 68: Threat Modeling: aprender a pensar como un atacante",
+    href: "/daily/68",
+  },
+  {
+    date: "2026-05-14",
+    title: "Leccion 69: Como reportar hallazgos de seguridad profesionalmente",
+    href: "/daily/69",
+  },
+  {
+    date: "2026-05-15",
+    title: "Leccion 70: Auditoria completa simulada: aplicar todo junto",
+    href: "/daily/70",
+  },
+];
+
+const plannedLessons: CalendarLesson[] = [
+  {
+    date: "2026-05-16",
+    title: "Leccion 71: Que significa realmente performance",
+    href: "/daily/71",
+  },
+  {
+    date: "2026-05-17",
+    title: "Leccion 72: Bottlenecks: donde se vuelven lentos los sistemas",
+    href: null,
+  },
+  {
+    date: "2026-05-18",
+    title: "Leccion 73: Caching: evitar trabajo innecesario",
+    href: null,
+  },
+  {
+    date: "2026-05-19",
+    title: "Leccion 74: N+1 Queries: el asesino silencioso",
+    href: null,
+  },
+  {
+    date: "2026-05-20",
+    title: "Leccion 75: Paginacion y carga eficiente",
+    href: null,
+  },
+  {
+    date: "2026-05-21",
+    title: "Leccion 76: Background Jobs y colas",
+    href: null,
+  },
+  {
+    date: "2026-05-22",
+    title: "Leccion 77: Escalabilidad horizontal vs vertical",
+    href: null,
+  },
+  {
+    date: "2026-05-23",
+    title: "Leccion 78: Observabilidad y profiling",
+    href: null,
+  },
+  {
+    date: "2026-05-24",
+    title: "Leccion 79: Diseno para alta carga",
+    href: null,
+  },
+  {
+    date: "2026-05-25",
+    title: "Leccion 80: Simulacion completa de backend escalable",
+    href: null,
+  },
+];
+
 function normalizeLessonTitle(commitMessage: string): { lessonNumber: number | null } {
   const numberMatch = commitMessage.match(/^add\s+lesson\s+no\s+([0-9]+)\b/i);
   const lessonNumber = numberMatch ? Number(numberMatch[1]) : null;
@@ -61,7 +167,7 @@ async function getLessonsFromCommitFile(): Promise<CalendarLesson[]> {
     return [];
   }
 
-  return content
+  const committedLessons = content
     .split("\n")
     .map((line) => line.trim())
     .filter(Boolean)
@@ -84,6 +190,14 @@ async function getLessonsFromCommitFile(): Promise<CalendarLesson[]> {
     })
     .filter((item): item is CalendarLesson => item !== null)
     .sort((a, b) => a.date.localeCompare(b.date));
+
+  const committedHrefs = new Set(committedLessons.map((lesson) => lesson.href).filter(Boolean));
+  const missingPublishedLessons = publishedLessons.filter((lesson) => !committedHrefs.has(lesson.href));
+  const availableLessons = [...committedLessons, ...missingPublishedLessons];
+  const availableTitles = new Set(availableLessons.map((lesson) => lesson.title));
+  const futureLessons = plannedLessons.filter((lesson) => !availableTitles.has(lesson.title));
+
+  return [...availableLessons, ...futureLessons].sort((a, b) => a.date.localeCompare(b.date));
 }
 
 export default async function DailyIndexPage() {
