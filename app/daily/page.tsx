@@ -69,7 +69,7 @@ const plannedLessons: CalendarLesson[] = [
   {
     date: "2026-05-18",
     title: "Leccion 73: Caching: evitar trabajo innecesario",
-    href: null,
+    href: "/daily/73",
   },
   {
     date: "2026-05-19",
