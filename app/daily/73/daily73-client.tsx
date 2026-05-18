@@ -100,7 +100,7 @@ export default function Daily73Client() {
     const onKeyDown = (event: KeyboardEvent) => {
       const target = event.target as HTMLElement | null;
       if (target && (target.tagName === "INPUT" || target.tagName === "TEXTAREA")) return;
-      if (event.key.toLowerCase() === "p") window.location.href = "/daily/71";
+      if (event.key.toLowerCase() === "p") window.location.href = "/daily/72";
     };
 
     window.addEventListener("keydown", onKeyDown);
@@ -137,8 +137,8 @@ export default function Daily73Client() {
           </nav>
 
           <div className={styles.actions}>
-            <Link className={styles.btn} href="/daily/71">
-              <span className={styles.kbd}>←</span> Dia 71
+            <Link className={styles.btn} href="/daily/72">
+              <span className={styles.kbd}>←</span> Dia 72
             </Link>
             <Link className={`${styles.btn} ${styles.primary}`} href="#idea">
               Empezar

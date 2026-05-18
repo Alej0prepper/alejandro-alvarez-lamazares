@@ -64,7 +64,7 @@ const plannedLessons: CalendarLesson[] = [
   {
     date: "2026-05-17",
     title: "Leccion 72: Bottlenecks: donde se vuelven lentos los sistemas",
-    href: null,
+    href: "/daily/72",
   },
   {
     date: "2026-05-18",
