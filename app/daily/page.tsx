@@ -74,7 +74,7 @@ const plannedLessons: CalendarLesson[] = [
   {
     date: "2026-05-19",
     title: "Leccion 74: Trabajo sincronico vs asincronico en backend",
-    href: null,
+    href: "/daily/74",
   },
   {
     date: "2026-05-20",
