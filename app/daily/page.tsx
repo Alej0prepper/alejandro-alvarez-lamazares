@@ -53,9 +53,6 @@ const publishedLessons: CalendarLesson[] = [
     title: "Leccion 70: Auditoria completa simulada: aplicar todo junto",
     href: "/daily/70",
   },
-];
-
-const plannedLessons: CalendarLesson[] = [
   {
     date: "2026-05-16",
     title: "Leccion 71: Que significa realmente performance",
@@ -71,39 +68,92 @@ const plannedLessons: CalendarLesson[] = [
     title: "Leccion 73: Caching: evitar trabajo innecesario",
     href: "/daily/73",
   },
+];
+
+const plannedLessons: CalendarLesson[] = [
   {
     date: "2026-05-19",
-    title: "Leccion 74: N+1 Queries: el asesino silencioso",
+    title: "Leccion 74: Trabajo sincronico vs asincronico en backend",
     href: null,
   },
   {
     date: "2026-05-20",
-    title: "Leccion 75: Paginacion y carga eficiente",
+    title: "Leccion 75: Escalabilidad vertical vs horizontal",
     href: null,
   },
   {
     date: "2026-05-21",
-    title: "Leccion 76: Background Jobs y colas",
+    title: "Leccion 76: Load Balancing",
     href: null,
   },
   {
     date: "2026-05-22",
-    title: "Leccion 77: Escalabilidad horizontal vs vertical",
+    title: "Leccion 77: Connection Pooling",
     href: null,
   },
   {
     date: "2026-05-23",
-    title: "Leccion 78: Observabilidad y profiling",
+    title: "Leccion 78: Thread Pool y operaciones bloqueantes",
     href: null,
   },
   {
     date: "2026-05-24",
-    title: "Leccion 79: Diseno para alta carga",
+    title: "Leccion 79: Observabilidad avanzada",
     href: null,
   },
   {
     date: "2026-05-25",
-    title: "Leccion 80: Simulacion completa de backend escalable",
+    title: "Leccion 80: Health Checks",
+    href: null,
+  },
+  {
+    date: "2026-05-26",
+    title: "Leccion 81: Graceful Shutdown",
+    href: null,
+  },
+  {
+    date: "2026-05-27",
+    title: "Leccion 82: Circuit Breaker",
+    href: null,
+  },
+  {
+    date: "2026-05-28",
+    title: "Leccion 83: Backpressure",
+    href: null,
+  },
+  {
+    date: "2026-05-29",
+    title: "Leccion 84: Feature Flags",
+    href: null,
+  },
+  {
+    date: "2026-05-30",
+    title: "Leccion 85: Configuracion por ambiente",
+    href: null,
+  },
+  {
+    date: "2026-05-31",
+    title: "Leccion 86: Deployments seguros",
+    href: null,
+  },
+  {
+    date: "2026-06-01",
+    title: "Leccion 87: Migraciones de base de datos en produccion",
+    href: null,
+  },
+  {
+    date: "2026-06-02",
+    title: "Leccion 88: Blue/Green y Canary Deployments",
+    href: null,
+  },
+  {
+    date: "2026-06-03",
+    title: "Leccion 89: Diseno para fallos",
+    href: null,
+  },
+  {
+    date: "2026-06-04",
+    title: "Leccion 90: Simulacion completa: backend listo para produccion",
     href: null,
   },
 ];
