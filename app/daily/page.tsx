@@ -79,7 +79,7 @@ const plannedLessons: CalendarLesson[] = [
   {
     date: "2026-05-20",
     title: "Leccion 75: Escalabilidad vertical vs horizontal",
-    href: null,
+    href: "/daily/75",
   },
   {
     date: "2026-05-21",
