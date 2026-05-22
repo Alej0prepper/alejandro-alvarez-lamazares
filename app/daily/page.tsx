@@ -83,8 +83,8 @@ const plannedLessons: CalendarLesson[] = [
   },
   {
     date: "2026-05-21",
-    title: "Leccion 76: Load Balancing",
-    href: null,
+    title: "Leccion 76: Observabilidad y profiling: como descubrir que esta rompiendo tu sistema",
+    href: "/daily/76",
   },
   {
     date: "2026-05-22",
