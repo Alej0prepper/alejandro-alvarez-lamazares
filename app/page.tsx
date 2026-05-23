@@ -99,6 +99,16 @@ export default async function Page() {
                 Ver Archivo Daily
               </Link>
             </div>
+            <p className={styles.footer}>
+              Repositorio oficial del proyecto:{" "}
+              <a
+                href="https://github.com/Alej0prepper/alejandro-alvarez-lamazares"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Alej0prepper/alejandro-alvarez-lamazares
+              </a>
+            </p>
           </div>
 
           <aside className={styles.heroPreview} aria-label="Placeholder de imagen principal">
@@ -131,6 +141,7 @@ export default async function Page() {
           ))}
         </div>
       </section>
+
     </main>
   );
 }
