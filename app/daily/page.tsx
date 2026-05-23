@@ -88,8 +88,8 @@ const plannedLessons: CalendarLesson[] = [
   },
   {
     date: "2026-05-22",
-    title: "Leccion 77: Connection Pooling",
-    href: null,
+    title: "Leccion 77: Diseno para alta carga: como cambia un backend cuando escala de verdad",
+    href: "/daily/77",
   },
   {
     date: "2026-05-23",
