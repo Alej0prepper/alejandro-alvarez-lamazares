@@ -98,8 +98,8 @@ const plannedLessons: CalendarLesson[] = [
   },
   {
     date: "2026-05-24",
-    title: "Leccion 79: Observabilidad avanzada",
-    href: null,
+    title: "Leccion 79: Simulacion completa: disenando un backend preparado para escalar",
+    href: "/daily/79",
   },
   {
     date: "2026-05-25",
