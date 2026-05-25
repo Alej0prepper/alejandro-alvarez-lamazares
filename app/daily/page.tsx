@@ -93,8 +93,8 @@ const plannedLessons: CalendarLesson[] = [
   },
   {
     date: "2026-05-23",
-    title: "Leccion 78: Thread Pool y operaciones bloqueantes",
-    href: null,
+    title: "Leccion 78: Consistencia vs performance: los tradeoffs reales de sistemas grandes",
+    href: "/daily/78",
   },
   {
     date: "2026-05-24",
