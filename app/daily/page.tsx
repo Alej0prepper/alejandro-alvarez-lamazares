@@ -103,8 +103,8 @@ const plannedLessons: CalendarLesson[] = [
   },
   {
     date: "2026-05-25",
-    title: "Leccion 80: Health Checks",
-    href: null,
+    title: "Leccion 80: Backpressure: como un backend se protege cuando recibe mas trabajo del que puede soportar",
+    href: "/daily/80",
   },
   {
     date: "2026-05-26",
