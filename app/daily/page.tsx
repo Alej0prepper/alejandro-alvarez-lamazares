@@ -108,8 +108,8 @@ const plannedLessons: CalendarLesson[] = [
   },
   {
     date: "2026-05-26",
-    title: "Leccion 81: Graceful Shutdown",
-    href: null,
+    title: "Leccion 81: Circuit Breaker: evitar que un servicio caido destruya todo tu backend",
+    href: "/daily/81",
   },
   {
     date: "2026-05-27",
