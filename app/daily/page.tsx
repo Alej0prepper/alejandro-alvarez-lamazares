@@ -103,22 +103,22 @@ const plannedLessons: CalendarLesson[] = [
   },
   {
     date: "2026-05-25",
-    title: "Leccion 80: Backpressure: como un backend se protege cuando recibe mas trabajo del que puede soportar",
+    title: "Leccion 80: Backpressure",
     href: "/daily/80",
   },
   {
     date: "2026-05-26",
-    title: "Leccion 81: Circuit Breaker: evitar que un servicio caido destruya todo tu backend",
+    title: "Leccion 81: Circuit Breaker",
     href: "/daily/81",
   },
   {
     date: "2026-05-27",
-    title: "Leccion 82: Circuit Breaker",
-    href: null,
+    title: "Leccion 82: Health Checks",
+    href: "/daily/82",
   },
   {
     date: "2026-05-28",
-    title: "Leccion 83: Backpressure",
+    title: "Leccion 83: Graceful Shutdown",
     href: null,
   },
   {
@@ -138,7 +138,7 @@ const plannedLessons: CalendarLesson[] = [
   },
   {
     date: "2026-06-01",
-    title: "Leccion 87: Migraciones de base de datos en produccion",
+    title: "Leccion 87: Migraciones en produccion",
     href: null,
   },
   {
@@ -153,7 +153,7 @@ const plannedLessons: CalendarLesson[] = [
   },
   {
     date: "2026-06-04",
-    title: "Leccion 90: Simulacion completa: backend listo para produccion",
+    title: "Leccion 90: Simulacion completa de backend en produccion",
     href: null,
   },
 ];
