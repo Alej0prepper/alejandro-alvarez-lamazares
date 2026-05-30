@@ -124,7 +124,7 @@ const plannedLessons: CalendarLesson[] = [
   {
     date: "2026-05-29",
     title: "Leccion 84: Feature Flags",
-    href: null,
+    href: "/daily/84",
   },
   {
     date: "2026-05-30",
