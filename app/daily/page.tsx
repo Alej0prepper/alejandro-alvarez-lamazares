@@ -139,7 +139,7 @@ const plannedLessons: CalendarLesson[] = [
   {
     date: "2026-06-01",
     title: "Leccion 87: Migraciones en produccion",
-    href: null,
+    href: "/daily/87",
   },
   {
     date: "2026-06-02",
