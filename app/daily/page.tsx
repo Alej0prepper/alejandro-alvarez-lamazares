@@ -156,6 +156,66 @@ const plannedLessons: CalendarLesson[] = [
     title: "Leccion 90: Simulacion completa de backend en produccion",
     href: "/daily/90",
   },
+  {
+    date: "2026-06-05",
+    title: "Leccion 91: Docker desde cero para backend",
+    href: null,
+  },
+  {
+    date: "2026-06-06",
+    title: "Leccion 92: Dockerfile reales en produccion",
+    href: null,
+  },
+  {
+    date: "2026-06-07",
+    title: "Leccion 93: Contenedores reales: redes, volumenes, env y secretos",
+    href: null,
+  },
+  {
+    date: "2026-06-08",
+    title: "Leccion 94: Kubernetes fundamental",
+    href: null,
+  },
+  {
+    date: "2026-06-09",
+    title: "Leccion 95: Deploys en Kubernetes: estrategia y practica",
+    href: null,
+  },
+  {
+    date: "2026-06-10",
+    title: "Leccion 96: Health checks y arranque/graceful shutdown",
+    href: null,
+  },
+  {
+    date: "2026-06-11",
+    title: "Leccion 97: Escalado, recursos y comportamiento bajo fallos",
+    href: null,
+  },
+  {
+    date: "2026-06-12",
+    title: "Leccion 98: Observabilidad y monitoreo de cluster",
+    href: null,
+  },
+  {
+    date: "2026-06-13",
+    title: "Leccion 99: Seguridad de contenedores y cluster",
+    href: null,
+  },
+  {
+    date: "2026-06-14",
+    title: "Leccion 100: CI/CD y despliegue automatizado",
+    href: null,
+  },
+  {
+    date: "2026-06-15",
+    title: "Leccion 101: Operacion diaria y resiliencia en produccion",
+    href: null,
+  },
+  {
+    date: "2026-06-16",
+    title: "Leccion 102: Cultura de plataforma, deploys y rollback",
+    href: null,
+  },
 ];
 
 function normalizeLessonTitle(commitMessage: string): { lessonNumber: number | null } {
