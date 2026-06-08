@@ -169,7 +169,7 @@ const plannedLessons: CalendarLesson[] = [
   {
     date: "2026-06-07",
     title: "Leccion 93: Contenedores reales: redes, volumenes, env y secretos",
-    href: null,
+    href: "/daily/93",
   },
   {
     date: "2026-06-08",
