@@ -174,7 +174,7 @@ const plannedLessons: CalendarLesson[] = [
   {
     date: "2026-06-08",
     title: "Leccion 94: Kubernetes fundamental",
-    href: null,
+    href: "/daily/94",
   },
   {
     date: "2026-06-09",
