@@ -179,7 +179,7 @@ const plannedLessons: CalendarLesson[] = [
   {
     date: "2026-06-09",
     title: "Leccion 95: Deploys en Kubernetes: estrategia y practica",
-    href: null,
+    href: "/daily/95",
   },
   {
     date: "2026-06-10",
