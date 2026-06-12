@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 320" role="img" aria-labelledby="title desc">
+  <title id="title">Capitolio de La Habana</title>
+  <desc id="desc">Ilustracion del Capitolio de La Habana con cupula y columnas.</desc>
+  <rect width="500" height="320" fill="#89cde5"/>
+  <path d="M0 231c62-25 120-30 174-15 60 17 116 5 170-15 55-20 106-20 156 0v119H0z" fill="#2f8f84"/>
+  <path d="M55 260h390v32H55z" fill="#b98654"/>
+  <path d="M100 152h300v111H100z" fill="#f2dfbd"/>
+  <path d="M80 135h340v25H80z" fill="#d3a36a"/>
+  <path d="M150 262V160h22v102zm59 0V160h22v102zm59 0V160h22v102zm59 0V160h22v102z" fill="#c89761"/>
+  <path d="M185 136c0-36 29-66 65-66s65 30 65 66z" fill="#d8b27f"/>
+  <path d="M215 73c8-34 62-34 70 0z" fill="#f0d6a6"/>
+  <path d="M245 27h10v44h-10z" fill="#8d643f"/>
+  <path d="M230 28h40l-20-17z" fill="#c34237"/>
+  <path d="M128 192h48v70h-48zm98 0h48v70h-48zm98 0h48v70h-48z" fill="#775133" opacity=".2"/>
+</svg>

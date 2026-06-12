@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 320" role="img" aria-labelledby="title desc">
+  <title id="title">Malecon de La Habana</title>
+  <desc id="desc">Ilustracion del Malecon con mar, muro costero y edificios de La Habana.</desc>
+  <rect width="500" height="320" fill="#8ed4ed"/>
+  <path d="M0 177c50-15 91-15 139 0 47 15 91 15 138 0 50-16 96-16 140 0 31 11 59 14 83 7v136H0z" fill="#0b86b5"/>
+  <path d="M0 218c43-10 84-9 123 3 43 13 87 12 133-3 45-14 90-14 135 0 40 13 76 14 109 4v98H0z" fill="#05668d"/>
+  <path d="M0 160h500v37H0z" fill="#d7c4a3"/>
+  <path d="M0 187h500v18H0z" fill="#9b7d59"/>
+  <path d="M42 77h48v83H42z" fill="#f0c987"/>
+  <path d="M102 96h56v64h-56z" fill="#e06d4f"/>
+  <path d="M172 65h44v95h-44z" fill="#f4d35e"/>
+  <path d="M229 88h66v72h-66z" fill="#7fb069"/>
+  <path d="M310 72h50v88h-50z" fill="#d9b08c"/>
+  <path d="M374 101h72v59h-72z" fill="#f6aa73"/>
+  <path d="M50 92h10v13H50zm20 0h10v13H70zm44 18h10v13h-10zm20 0h10v13h-10zm72-27h10v13h-10zm36 20h10v13h-10zm24 0h10v13h-10zm58-13h10v13h-10zm20 0h10v13h-10zm52 25h10v13h-10zm24 0h10v13h-10z" fill="#21414f" opacity=".55"/>
+  <path d="M0 151h500v12H0z" fill="#6c584c"/>
+</svg>
