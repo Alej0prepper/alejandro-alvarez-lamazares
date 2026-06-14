@@ -189,22 +189,22 @@ const plannedLessons: CalendarLesson[] = [
   {
     date: "2026-06-11",
     title: "Leccion 97: Escalado, recursos y comportamiento bajo fallos",
-    href: null,
+    href: "/daily/97",
   },
   {
     date: "2026-06-12",
     title: "Leccion 98: Observabilidad y monitoreo de cluster",
-    href: null,
+    href: "/daily/98",
   },
   {
     date: "2026-06-13",
     title: "Leccion 99: Seguridad de contenedores y cluster",
-    href: null,
+    href: "/daily/99",
   },
   {
     date: "2026-06-14",
     title: "Leccion 100: CI/CD y despliegue automatizado",
-    href: null,
+    href: "/daily/100",
   },
   {
     date: "2026-06-15",
