@@ -17,6 +17,10 @@ export default function HavanaMapPage() {
       </section>
 
       <HavanaMapClient />
+
+      <section className={styles.legend} aria-label="Resumen del mapa">
+        <p>46 microvertederos detectados en total</p>
+      </section>
     </main>
   );
 }

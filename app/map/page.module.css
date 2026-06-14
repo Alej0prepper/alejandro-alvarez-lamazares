@@ -58,6 +58,22 @@
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.34);
 }
 
+.legend {
+  width: min(1120px, 100%);
+  margin: 14px auto 0;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 8px;
+  background: rgba(8, 23, 44, 0.34);
+  color: #f8fbff;
+}
+
+.legend p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+}
+
 .map {
   width: 100%;
   height: min(72vh, 720px);
@@ -155,5 +171,9 @@
   .map {
     height: 68vh;
     min-height: 420px;
+  }
+
+  .legend {
+    margin-top: 12px;
   }
 }
