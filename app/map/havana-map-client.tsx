@@ -94,28 +94,6 @@ export default function HavanaMapClient() {
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(map);
 
-    window.L.marker([23.136, -82.358])
-      .addTo(map)
-      .bindPopup(`
-        <h3>Capitolio</h3>
-        <img
-          src="/fotos/capitolio.svg"
-          width="250"
-          alt="Capitolio de La Habana"
-        >
-      `);
-
-    window.L.marker([23.141, -82.372])
-      .addTo(map)
-      .bindPopup(`
-        <h3>Malecon</h3>
-        <img
-          src="/fotos/malecon.svg"
-          width="250"
-          alt="Malecon de La Habana"
-        >
-      `);
-
     window.L.marker([23.115855980630002, -82.43304489985582])
       .addTo(map)
       .bindPopup(`
