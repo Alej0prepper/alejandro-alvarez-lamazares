@@ -276,6 +276,146 @@ export default function HavanaMapClient() {
         </button>
       `);
 
+    window.L.marker([23.125485970817433, -82.42031854302327])
+      .addTo(map)
+      .bindPopup(`
+        <h3>3ra y 16</h3>
+        <button
+          type="button"
+          class="map-popup-image-button"
+          data-full-image="/fotos/3ra-16.jpg"
+          data-full-alt="Foto de 3ra y 16"
+          data-full-width="1280"
+          data-full-height="720"
+        >
+          <img
+            src="/fotos/3ra-16.jpg"
+            width="250"
+            alt="Foto de 3ra y 16"
+          >
+        </button>
+      `);
+
+    window.L.marker([23.126089372327108, -82.41963564580203])
+      .addTo(map)
+      .bindPopup(`
+        <h3>3ra y 14</h3>
+        <button
+          type="button"
+          class="map-popup-image-button"
+          data-full-image="/fotos/3ra-14.jpg"
+          data-full-alt="Foto de 3ra y 14"
+          data-full-width="1280"
+          data-full-height="720"
+        >
+          <img
+            src="/fotos/3ra-14.jpg"
+            width="250"
+            alt="Foto de 3ra y 14"
+          >
+        </button>
+      `);
+
+    window.L.marker([23.127342773933936, -82.4179098071476])
+      .addTo(map)
+      .bindPopup(`
+        <h3>3ra y 10</h3>
+        <button
+          type="button"
+          class="map-popup-image-button"
+          data-full-image="/fotos/3ra-10.jpg"
+          data-full-alt="Foto de 3ra y 10"
+          data-full-width="1280"
+          data-full-height="720"
+        >
+          <img
+            src="/fotos/3ra-10.jpg"
+            width="250"
+            alt="Foto de 3ra y 10"
+          >
+        </button>
+      `);
+
+    window.L.marker([23.127965762083846, -82.4171355990969])
+      .addTo(map)
+      .bindPopup(`
+        <h3>3ra y 8</h3>
+        <button
+          type="button"
+          class="map-popup-image-button"
+          data-full-image="/fotos/3ra-8.jpg"
+          data-full-alt="Foto de 3ra y 8"
+          data-full-width="720"
+          data-full-height="1280"
+        >
+          <img
+            src="/fotos/3ra-8.jpg"
+            width="250"
+            alt="Foto de 3ra y 8"
+          >
+        </button>
+      `);
+
+    window.L.marker([23.130589950740514, -82.41394393459011])
+      .addTo(map)
+      .bindPopup(`
+        <h3>3ra y 0</h3>
+        <button
+          type="button"
+          class="map-popup-image-button"
+          data-full-image="/fotos/3ra-0.jpg"
+          data-full-alt="Foto de 3ra y 0"
+          data-full-width="1280"
+          data-full-height="720"
+        >
+          <img
+            src="/fotos/3ra-0.jpg"
+            width="250"
+            alt="Foto de 3ra y 0"
+          >
+        </button>
+      `);
+
+    window.L.marker([23.129919036234835, -82.41480224150817])
+      .addTo(map)
+      .bindPopup(`
+        <h3>3ra y 2</h3>
+        <button
+          type="button"
+          class="map-popup-image-button"
+          data-full-image="/fotos/3ra-2.jpg"
+          data-full-alt="Foto de 3ra y 2"
+          data-full-width="1280"
+          data-full-height="720"
+        >
+          <img
+            src="/fotos/3ra-2.jpg"
+            width="250"
+            alt="Foto de 3ra y 2"
+          >
+        </button>
+      `);
+
+    window.L.marker([23.12866291206827, -82.41640977907548])
+      .addTo(map)
+      .bindPopup(`
+        <h3>3ra y 6</h3>
+        <button
+          type="button"
+          class="map-popup-image-button"
+          data-full-image="/fotos/3ra-6.jpg"
+          data-full-alt="Foto de 3ra y 6"
+          data-full-width="1280"
+          data-full-height="720"
+        >
+          <img
+            src="/fotos/3ra-6.jpg"
+            width="250"
+            alt="Foto de 3ra y 6"
+          >
+        </button>
+      `);
+
     return () => {
       map.remove();
       mapRef.current = null;
