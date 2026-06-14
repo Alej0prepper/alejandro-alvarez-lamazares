@@ -14,6 +14,8 @@ type LeafletMarker = {
   bindPopup: (html: string) => LeafletMarker;
 };
 
+type LeafletIcon = unknown;
+
 type LeafletTileLayer = {
   addTo: (map: LeafletMap) => LeafletTileLayer;
 };
@@ -26,7 +28,18 @@ type LeafletApi = {
     url: string,
     options?: { attribution?: string }
   ) => LeafletTileLayer;
-  marker: (coordinates: [number, number]) => LeafletMarker;
+  marker: (
+    coordinates: [number, number],
+    options?: { icon?: LeafletIcon }
+  ) => LeafletMarker;
+  icon: (options: {
+    iconUrl: string;
+    shadowUrl?: string;
+    iconSize?: [number, number];
+    iconAnchor?: [number, number];
+    popupAnchor?: [number, number];
+    shadowSize?: [number, number];
+  }) => LeafletIcon;
 };
 
 declare global {
@@ -40,6 +53,8 @@ const leafletScriptUrl = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js";
 
 export default function HavanaMapClient() {
   const mapRef = useRef<LeafletMap | null>(null);
+  const modalHistoryRef = useRef(false);
+  const modalOpenRef = useRef(false);
   const [leafletReady, setLeafletReady] = useState(false);
   const [fullImage, setFullImage] = useState<{
     src: string;
@@ -47,6 +62,20 @@ export default function HavanaMapClient() {
     width: number;
     height: number;
   } | null>(null);
+
+  useEffect(() => {
+    modalOpenRef.current = fullImage !== null;
+  }, [fullImage]);
+
+  function closeFullImage() {
+    if (!modalOpenRef.current) return;
+    if (modalHistoryRef.current) {
+      modalHistoryRef.current = false;
+      window.history.back();
+      return;
+    }
+    setFullImage(null);
+  }
 
   useEffect(() => {
     function handleDocumentClick(event: MouseEvent) {
@@ -60,6 +89,10 @@ export default function HavanaMapClient() {
       if (!src) return;
 
       event.preventDefault();
+      if (!modalOpenRef.current) {
+        modalHistoryRef.current = true;
+        window.history.pushState({ mapImageModal: true }, "");
+      }
       setFullImage({
         src,
         alt: trigger.dataset.fullAlt ?? "Imagen ampliada",
@@ -70,29 +103,49 @@ export default function HavanaMapClient() {
 
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
+        closeFullImage();
+      }
+    }
+
+    function handlePopState() {
+      if (modalHistoryRef.current) {
+        modalHistoryRef.current = false;
         setFullImage(null);
       }
     }
 
     document.addEventListener("click", handleDocumentClick);
     document.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("popstate", handlePopState);
 
     return () => {
       document.removeEventListener("click", handleDocumentClick);
       document.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("popstate", handlePopState);
     };
   }, []);
 
   useEffect(() => {
     if (!leafletReady || mapRef.current || !window.L) return;
 
-    const map = window.L.map("map").setView([23.1136, -82.3666], 13);
+    const map = window.L.map("map").setView([23.11753779232512, -82.4221588972623], 13);
     mapRef.current = map;
 
     window.L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution:
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(map);
+
+    const redIcon = window.L.icon({
+      iconUrl:
+        "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png",
+      shadowUrl:
+        "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowSize: [41, 41],
+    });
 
     window.L.marker([23.115855980630002, -82.43304489985582])
       .addTo(map)
@@ -714,6 +767,192 @@ export default function HavanaMapClient() {
         </button>
       `);
 
+    window.L.marker([23.124756921627522, -82.41418223853486])
+      .addTo(map)
+      .bindPopup(`
+        <h3>7ma y 8</h3>
+        <button
+          type="button"
+          class="map-popup-image-button"
+          data-full-image="/fotos/7ma-8.jpg"
+          data-full-alt="Foto de 7ma y 8"
+          data-full-width="1280"
+          data-full-height="720"
+        >
+          <img
+            src="/fotos/7ma-8.jpg"
+            width="250"
+          alt="Foto de 7ma y 8"
+        >
+        </button>
+      `);
+
+    window.L.marker([23.12023834604711, -82.41995438565672], {
+      icon: redIcon,
+    })
+      .addTo(map)
+      .bindPopup(`
+        <h3>7ma y 22 embajada de paises bajos</h3>
+        <button
+          type="button"
+          class="map-popup-image-button"
+          data-full-image="/fotos/7ma-22-emb-paisesbajoss.jpg"
+          data-full-alt="Foto de 7ma y 22 embajada de paises bajos"
+          data-full-width="1280"
+          data-full-height="720"
+        >
+          <img
+            src="/fotos/7ma-22-emb-paisesbajoss.jpg"
+            width="250"
+            alt="Foto de 7ma y 22 embajada de paises bajos"
+          >
+        </button>
+      `);
+
+    window.L.marker([23.11900703684868, -82.42164687518374], {
+      icon: redIcon,
+    })
+      .addTo(map)
+      .bindPopup(`
+        <h3>7ma y 26 farmacia internacional</h3>
+        <button
+          type="button"
+          class="map-popup-image-button"
+          data-full-image="/fotos/7ma-26.jpg"
+          data-full-alt="Foto de 7ma y 26 farmacia internacional"
+          data-full-width="1280"
+          data-full-height="720"
+        >
+          <img
+            src="/fotos/7ma-26.jpg"
+            width="250"
+            alt="Foto de 7ma y 26 farmacia internacional"
+          >
+        </button>
+      `);
+
+    window.L.marker([23.117160051865998, -82.42412245684295])
+      .addTo(map)
+      .bindPopup(`
+        <h3>7ma y 32</h3>
+        <button
+          type="button"
+          class="map-popup-image-button"
+          data-full-image="/fotos/7ma-32.jpg"
+          data-full-alt="Foto de 7ma y 32"
+          data-full-width="1280"
+          data-full-height="720"
+        >
+          <img
+            src="/fotos/7ma-32.jpg"
+            width="250"
+          alt="Foto de 7ma y 32"
+        >
+        </button>
+      `);
+
+    window.L.marker([23.116544384536617, -82.42495607106989])
+      .addTo(map)
+      .bindPopup(`
+        <h3>7ma y 34</h3>
+        <button
+          type="button"
+          class="map-popup-image-button"
+          data-full-image="/fotos/7ma-34.jpg"
+          data-full-alt="Foto de 7ma y 34"
+          data-full-width="1280"
+          data-full-height="720"
+        >
+          <img
+            src="/fotos/7ma-34.jpg"
+            width="250"
+          alt="Foto de 7ma y 34"
+        >
+        </button>
+      `);
+
+    window.L.marker([23.11578560926723, -82.42564275731354], {
+      icon: redIcon,
+    })
+      .addTo(map)
+      .bindPopup(`
+        <h3>7ma y 36 (consultores y abogados internacionales y embajadas aledañas)</h3>
+        <button
+          type="button"
+          class="map-popup-image-button"
+          data-full-image="/fotos/7ma-36.jpg"
+          data-full-alt="Foto de 7ma y 36"
+          data-full-width="1280"
+          data-full-height="720"
+        >
+          <img
+            src="/fotos/7ma-36.jpg"
+            width="250"
+          alt="Foto de 7ma y 36"
+        >
+        </button>
+      `);
+
+    window.L.marker([23.11536414516809, -82.42635249407289])
+      .addTo(map)
+      .bindPopup(`
+        <h3>7ma y 36a</h3>
+        <button
+          type="button"
+          class="map-popup-image-button"
+          data-full-image="/fotos/7ma-36a.jpg"
+          data-full-alt="Foto de 7ma y 36a"
+          data-full-width="1280"
+          data-full-height="720"
+        >
+          <img
+            src="/fotos/7ma-36a.jpg"
+            width="250"
+          alt="Foto de 7ma y 36a"
+        >
+        </button>
+      `);
+
+    window.L.marker([23.096585810040633, -82.44837256957956])
+      .addTo(map)
+      .bindPopup(`
+        <h3>9na y 5ta f arriba</h3>
+        <button
+          type="button"
+          class="map-popup-image-button"
+          data-full-image="/fotos/9na-5taf-arriba.jpg"
+          data-full-alt="Foto de 9na y 5ta f arriba"
+          data-full-width="1280"
+          data-full-height="720"
+        >
+          <img
+            src="/fotos/9na-5taf-arriba.jpg"
+            width="250"
+          alt="Foto de 9na y 5ta f arriba"
+        >
+        </button>
+      `);
+
+    window.L.marker([23.096289282517667, -82.44920915171234])
+      .addTo(map)
+      .bindPopup(`
+        <h3>5ta f</h3>
+        <button
+          type="button"
+          class="map-popup-image-button"
+          data-full-image="/fotos/9na-5taf.jpg"
+          data-full-alt="Foto de 5ta f"
+          data-full-width="1280"
+          data-full-height="720"
+        >
+          <img
+            src="/fotos/9na-5taf.jpg"
+            width="250"
+            alt="Foto de 5ta f"
+          >
+        </button>
+      `);
+
     window.L.marker([23.134034290397473, -82.41230042952621])
       .addTo(map)
       .bindPopup(`
@@ -862,7 +1101,7 @@ export default function HavanaMapClient() {
             type="button"
             className={styles.lightboxBackdrop}
             aria-label="Cerrar imagen"
-            onClick={() => setFullImage(null)}
+            onClick={closeFullImage}
           />
           <Image
             src={fullImage.src}
@@ -874,7 +1113,7 @@ export default function HavanaMapClient() {
           <button
             type="button"
             className={styles.lightboxClose}
-            onClick={() => setFullImage(null)}
+            onClick={closeFullImage}
           >
             Cerrar
           </button>
