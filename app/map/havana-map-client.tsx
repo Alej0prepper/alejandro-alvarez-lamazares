@@ -948,7 +948,367 @@ export default function HavanaMapClient() {
           <img
             src="/fotos/9na-5taf.jpg"
             width="250"
-            alt="Foto de 5ta f"
+          alt="Foto de 5ta f"
+        >
+        </button>
+      `);
+
+    window.L.marker([23.104318, -82.435607])
+      .addTo(map)
+      .bindPopup(`
+        <h3>9na-76</h3>
+        <button
+          type="button"
+          class="map-popup-image-button"
+          data-full-image="/fotos/9na-76.jpg"
+          data-full-alt="Foto de 9na-76"
+          data-full-width="1280"
+          data-full-height="720"
+        >
+          <img
+            src="/fotos/9na-76.jpg"
+            width="250"
+          alt="Foto de 9na-76"
+        >
+        </button>
+      `);
+
+    window.L.marker([23.102103, -82.438027])
+      .addTo(map)
+      .bindPopup(`
+        <h3>9na y 82</h3>
+        <button
+          type="button"
+          class="map-popup-image-button"
+          data-full-image="/fotos/9na-82.jpg"
+          data-full-alt="Foto de 9na y 82"
+          data-full-width="1280"
+          data-full-height="720"
+        >
+          <img
+            src="/fotos/9na-82.jpg"
+            width="250"
+          alt="Foto de 9na y 82"
+        >
+        </button>
+      `);
+
+    window.L.marker([23.108214, -82.426965])
+      .addTo(map)
+      .bindPopup(`
+        <h3>15-52</h3>
+        <button
+          type="button"
+          class="map-popup-image-button"
+          data-full-image="/fotos/15-52.jpg"
+          data-full-alt="Foto de 15-52"
+          data-full-width="1280"
+          data-full-height="720"
+        >
+          <img
+            src="/fotos/15-52.jpg"
+            width="250"
+          alt="Foto de 15-52"
+        >
+        </button>
+      `);
+
+    window.L.marker([23.107254, -82.42611])
+      .addTo(map)
+      .bindPopup(`
+        <h3>17-60</h3>
+        <button
+          type="button"
+          class="map-popup-image-button"
+          data-full-image="/fotos/17-60.jpg"
+          data-full-alt="Foto de 17-60"
+          data-full-width="1280"
+          data-full-height="720"
+        >
+          <img
+            src="/fotos/17-60.jpg"
+            width="250"
+          alt="Foto de 17-60"
+        >
+        </button>
+      `);
+
+    window.L.marker([23.107254, -82.42611])
+      .addTo(map)
+      .bindPopup(`
+        <h3>19-36</h3>
+        <button
+          type="button"
+          class="map-popup-image-button"
+          data-full-image="/fotos/19-36.jpg"
+          data-full-alt="Foto de 19-36"
+          data-full-width="1280"
+          data-full-height="720"
+        >
+          <img
+            src="/fotos/19-36.jpg"
+            width="250"
+          alt="Foto de 19-36"
+        >
+        </button>
+      `);
+
+    window.L.marker([23.113187, -82.423596])
+      .addTo(map)
+      .bindPopup(`
+        <h3>19-42</h3>
+        <button
+          type="button"
+          class="map-popup-image-button"
+          data-full-image="/fotos/19-42.jpg"
+          data-full-alt="Foto de 19-42"
+          data-full-width="720"
+          data-full-height="1280"
+        >
+          <img
+            src="/fotos/19-42.jpg"
+            width="250"
+          alt="Foto de 19-42"
+        >
+        </button>
+      `);
+
+    window.L.marker([23.111855, -82.423725])
+      .addTo(map)
+      .bindPopup(`
+        <h3>19-44</h3>
+        <button
+          type="button"
+          class="map-popup-image-button"
+          data-full-image="/fotos/19-44.jpg"
+          data-full-alt="Foto de 19-44"
+          data-full-width="1280"
+          data-full-height="720"
+        >
+          <img
+            src="/fotos/19-44.jpg"
+            width="250"
+          alt="Foto de 19-44"
+        >
+        </button>
+      `);
+
+    window.L.marker([23.109447, -82.424487])
+      .addTo(map)
+      .bindPopup(`
+        <h3>19-48</h3>
+        <button
+          type="button"
+          class="map-popup-image-button"
+          data-full-image="/fotos/19-48.jpg"
+          data-full-alt="Foto de 19-48"
+          data-full-width="1280"
+          data-full-height="720"
+        >
+          <img
+            src="/fotos/19-48.jpg"
+            width="250"
+          alt="Foto de 19-48"
+        >
+        </button>
+      `);
+
+    window.L.marker([23.108609, -82.424519])
+      .addTo(map)
+      .bindPopup(`
+        <h3>19-50</h3>
+        <button
+          type="button"
+          class="map-popup-image-button"
+          data-full-image="/fotos/19-50.jpg"
+          data-full-alt="Foto de 19-50"
+          data-full-width="1280"
+          data-full-height="720"
+        >
+          <img
+            src="/fotos/19-50.jpg"
+            width="250"
+          alt="Foto de 19-50"
+        >
+        </button>
+      `);
+
+    window.L.marker([23.10627, -82.425152])
+      .addTo(map)
+      .bindPopup(`
+        <h3>19-60frente</h3>
+        <button
+          type="button"
+          class="map-popup-image-button"
+          data-full-image="/fotos/19-62frente.jpg"
+          data-full-alt="Foto de 19-60frente"
+          data-full-width="1280"
+          data-full-height="720"
+        >
+          <img
+            src="/fotos/19-62frente.jpg"
+            width="250"
+          alt="Foto de 19-60frente"
+        >
+        </button>
+      `);
+
+    window.L.marker([23.114006, -82.422223])
+      .addTo(map)
+      .bindPopup(`
+        <h3>21/40</h3>
+        <button
+          type="button"
+          class="map-popup-image-button"
+          data-full-image="/fotos/21-40.jpg"
+          data-full-alt="Foto de 21/40"
+          data-full-width="1280"
+          data-full-height="720"
+        >
+          <img
+            src="/fotos/21-40.jpg"
+            width="250"
+          alt="Foto de 21/40"
+        >
+        </button>
+      `);
+
+    window.L.marker([23.114204, -82.422491])
+      .addTo(map)
+      .bindPopup(`
+        <h3>21-402</h3>
+        <button
+          type="button"
+          class="map-popup-image-button"
+          data-full-image="/fotos/21-402.jpg"
+          data-full-alt="Foto de 21-402"
+          data-full-width="1280"
+          data-full-height="720"
+        >
+          <img
+            src="/fotos/21-402.jpg"
+            width="250"
+          alt="Foto de 21-402"
+        >
+        </button>
+      `);
+
+    window.L.marker([23.108401, -82.423564])
+      .addTo(map)
+      .bindPopup(`
+        <h3>21-50</h3>
+        <button
+          type="button"
+          class="map-popup-image-button"
+          data-full-image="/fotos/21-503.jpg"
+          data-full-alt="Foto de 21-50"
+          data-full-width="1280"
+          data-full-height="720"
+        >
+          <img
+            src="/fotos/21-503.jpg"
+            width="250"
+          alt="Foto de 21-50"
+        >
+        </button>
+      `);
+
+    window.L.marker([23.107849, -82.427019])
+      .addTo(map)
+      .bindPopup(`
+        <h3>60-15</h3>
+        <button
+          type="button"
+          class="map-popup-image-button"
+          data-full-image="/fotos/60-15.jpg"
+          data-full-alt="Foto de 60-15"
+          data-full-width="1280"
+          data-full-height="720"
+        >
+          <img
+            src="/fotos/60-15.jpg"
+            width="250"
+          alt="Foto de 60-15"
+        >
+        </button>
+      `);
+
+    window.L.marker([23.110444, -82.423167])
+      .addTo(map)
+      .bindPopup(`
+        <h3>21-46</h3>
+        <button
+          type="button"
+          class="map-popup-image-button"
+          data-full-image="/fotos/21-46.jpg"
+          data-full-alt="Foto de 21-46"
+          data-full-width="1280"
+          data-full-height="720"
+        >
+          <img
+            src="/fotos/21-46.jpg"
+            width="250"
+          alt="Foto de 21-46"
+        >
+        </button>
+      `);
+
+    window.L.marker([23.105628, -82.424251])
+      .addTo(map)
+      .bindPopup(`
+        <h3>21-60</h3>
+        <button
+          type="button"
+          class="map-popup-image-button"
+          data-full-image="/fotos/21-60.jpg"
+          data-full-alt="Foto de 21-60"
+          data-full-width="1280"
+          data-full-height="720"
+        >
+          <img
+            src="/fotos/21-60.jpg"
+            width="250"
+          alt="Foto de 21-60"
+        >
+        </button>
+      `);
+
+    window.L.marker([23.107701, -82.42483])
+      .addTo(map)
+      .bindPopup(`
+        <h3>19-52</h3>
+        <button
+          type="button"
+          class="map-popup-image-button"
+          data-full-image="/fotos/1952.jpg"
+          data-full-alt="Foto de 19-52"
+          data-full-width="1280"
+          data-full-height="720"
+        >
+          <img
+            src="/fotos/1952.jpg"
+            width="250"
+          alt="Foto de 19-52"
+        >
+        </button>
+      `);
+
+    window.L.marker([23.116564, -82.421652])
+      .addTo(map)
+      .bindPopup(`
+        <h3>21 y 30</h3>
+        <button
+          type="button"
+          class="map-popup-image-button"
+          data-full-image="/fotos/21-9.jpg"
+          data-full-alt="Foto de 21 y 30"
+          data-full-width="1280"
+          data-full-height="720"
+        >
+          <img
+            src="/fotos/21-9.jpg"
+            width="250"
+            alt="Foto de 21 y 30"
           >
         </button>
       `);
