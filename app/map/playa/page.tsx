@@ -22,6 +22,7 @@ export default function PlayaMapPage() {
 
       <section className={styles.legend} aria-label="Resumen del mapa">
         <p>Se muestra solo el límite territorial del municipio Playa.</p>
+        <p>64 microvertederos detectados hasta el momento.</p>
       </section>
     </main>
   );

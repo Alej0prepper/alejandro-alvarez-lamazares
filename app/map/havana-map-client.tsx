@@ -147,6 +147,17 @@ export default function HavanaMapClient() {
       shadowSize: [41, 41],
     });
 
+    const yellowIcon = window.L.icon({
+      iconUrl:
+        "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-yellow.png",
+      shadowUrl:
+        "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowSize: [41, 41],
+    });
+
     window.L.marker([23.115855980630002, -82.43304489985582])
       .addTo(map)
       .bindPopup(`
@@ -287,42 +298,46 @@ export default function HavanaMapClient() {
         </button>
       `);
 
-    window.L.marker([23.124800230591678, -82.4212358585147])
+    window.L.marker([23.124800230591678, -82.4212358585147], {
+      icon: redIcon,
+    })
       .addTo(map)
       .bindPopup(`
-        <h3>3ra y 18</h3>
+        <h3>3ra y 18 direccion provincial de justicia y escuela primaria</h3>
         <button
           type="button"
           class="map-popup-image-button"
           data-full-image="/fotos/3ra-18.jpg"
-          data-full-alt="Foto de 3ra y 18"
+          data-full-alt="Foto de 3ra y 18 direccion provincial de justicia y escuela primaria"
           data-full-width="1280"
           data-full-height="720"
         >
           <img
             src="/fotos/3ra-18.jpg"
             width="250"
-            alt="Foto de 3ra y 18"
+            alt="Foto de 3ra y 18 direccion provincial de justicia y escuela primaria"
           >
         </button>
       `);
 
-    window.L.marker([23.125485970817433, -82.42031854302327])
+    window.L.marker([23.125485970817433, -82.42031854302327], {
+      icon: redIcon,
+    })
       .addTo(map)
       .bindPopup(`
-        <h3>3ra y 16</h3>
+        <h3>3ra y 16 consultoria internacional</h3>
         <button
           type="button"
           class="map-popup-image-button"
           data-full-image="/fotos/3ra-16.jpg"
-          data-full-alt="Foto de 3ra y 16"
+          data-full-alt="Foto de 3ra y 16 consultoria internacional"
           data-full-width="1280"
           data-full-height="720"
         >
           <img
             src="/fotos/3ra-16.jpg"
             width="250"
-            alt="Foto de 3ra y 16"
+            alt="Foto de 3ra y 16 consultoria internacional"
           >
         </button>
       `);
@@ -347,22 +362,24 @@ export default function HavanaMapClient() {
         </button>
       `);
 
-    window.L.marker([23.127342773933936, -82.4179098071476])
+    window.L.marker([23.127342773933936, -82.4179098071476], {
+      icon: redIcon,
+    })
       .addTo(map)
       .bindPopup(`
-        <h3>3ra y 10</h3>
+        <h3>embajada de guinea ecuatorial</h3>
         <button
           type="button"
           class="map-popup-image-button"
           data-full-image="/fotos/3ra-10.jpg"
-          data-full-alt="Foto de 3ra y 10"
+          data-full-alt="Foto de embajada de guinea ecuatorial"
           data-full-width="1280"
           data-full-height="720"
         >
           <img
             src="/fotos/3ra-10.jpg"
             width="250"
-            alt="Foto de 3ra y 10"
+            alt="Foto de embajada de guinea ecuatorial"
           >
         </button>
       `);
@@ -507,27 +524,31 @@ export default function HavanaMapClient() {
         </button>
       `);
 
-    window.L.marker([23.124480927181338, -82.42514986043298])
+    window.L.marker([23.124480927181338, -82.42514986043298], {
+      icon: yellowIcon,
+    })
       .addTo(map)
       .bindPopup(`
-        <h3>1ra y 24</h3>
+        <h3>restaurant</h3>
         <button
           type="button"
           class="map-popup-image-button"
           data-full-image="/fotos/1ra-24.jpg"
-          data-full-alt="Foto de 1ra y 24"
+          data-full-alt="Foto de restaurant"
           data-full-width="1280"
           data-full-height="720"
         >
           <img
             src="/fotos/1ra-24.jpg"
             width="250"
-            alt="Foto de 1ra y 24"
+            alt="Foto de restaurant"
           >
         </button>
       `);
 
-    window.L.marker([23.123928384422218, -82.42608326916724])
+    window.L.marker([23.123928384422218, -82.42608326916724], {
+      icon: yellowIcon,
+    })
       .addTo(map)
       .bindPopup(`
         <h3>1ra y 26</h3>
@@ -547,22 +568,24 @@ export default function HavanaMapClient() {
         </button>
       `);
 
-    window.L.marker([23.123267303504498, -82.42683428772054])
+    window.L.marker([23.123267303504498, -82.42683428772054], {
+      icon: yellowIcon,
+    })
       .addTo(map)
       .bindPopup(`
-        <h3>1ra y 28</h3>
+        <h3>mypime</h3>
         <button
           type="button"
           class="map-popup-image-button"
           data-full-image="/fotos/1ra-28.jpg"
-          data-full-alt="Foto de 1ra y 28"
+          data-full-alt="Foto de mypime"
           data-full-width="1280"
           data-full-height="720"
         >
           <img
             src="/fotos/1ra-28.jpg"
             width="250"
-            alt="Foto de 1ra y 28"
+            alt="Foto de mypime"
           >
         </button>
       `);
@@ -1073,7 +1096,9 @@ export default function HavanaMapClient() {
         </button>
       `);
 
-    window.L.marker([23.111855, -82.423725])
+    window.L.marker([23.111855, -82.423725], {
+      icon: redIcon,
+    })
       .addTo(map)
       .bindPopup(`
         <h3>19-44</h3>
@@ -1153,22 +1178,24 @@ export default function HavanaMapClient() {
         </button>
       `);
 
-    window.L.marker([23.114006, -82.422223])
+    window.L.marker([23.114006, -82.422223], {
+      icon: redIcon,
+    })
       .addTo(map)
       .bindPopup(`
-        <h3>21/40</h3>
+        <h3>es inmenso21/40</h3>
         <button
           type="button"
           class="map-popup-image-button"
           data-full-image="/fotos/21-40.jpg"
-          data-full-alt="Foto de 21/40"
+          data-full-alt="Foto de es inmenso21/40"
           data-full-width="1280"
           data-full-height="720"
         >
           <img
             src="/fotos/21-40.jpg"
             width="250"
-          alt="Foto de 21/40"
+          alt="Foto de es inmenso21/40"
         >
         </button>
       `);
@@ -1413,22 +1440,24 @@ export default function HavanaMapClient() {
         </button>
       `);
 
-    window.L.marker([23.12866291206827, -82.41640977907548])
+    window.L.marker([23.12866291206827, -82.41640977907548], {
+      icon: yellowIcon,
+    })
       .addTo(map)
       .bindPopup(`
-        <h3>3ra y 6</h3>
+        <h3>restaurante fincimex</h3>
         <button
           type="button"
           class="map-popup-image-button"
           data-full-image="/fotos/3ra-6.jpg"
-          data-full-alt="Foto de 3ra y 6"
+          data-full-alt="Foto de restaurante fincimex"
           data-full-width="1280"
           data-full-height="720"
         >
           <img
             src="/fotos/3ra-6.jpg"
             width="250"
-            alt="Foto de 3ra y 6"
+            alt="Foto de restaurante fincimex"
           >
         </button>
       `);
