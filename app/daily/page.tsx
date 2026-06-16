@@ -209,12 +209,12 @@ const plannedLessons: CalendarLesson[] = [
   {
     date: "2026-06-15",
     title: "Leccion 101: Operacion diaria y resiliencia en produccion",
-    href: null,
+    href: "/daily/101",
   },
   {
     date: "2026-06-16",
     title: "Leccion 102: Cultura de plataforma, deploys y rollback",
-    href: null,
+    href: "/daily/102",
   },
 ];
 
