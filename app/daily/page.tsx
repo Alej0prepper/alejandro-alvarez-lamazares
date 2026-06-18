@@ -216,6 +216,11 @@ const plannedLessons: CalendarLesson[] = [
     title: "Leccion 102: Cultura de plataforma, deploys y rollback",
     href: "/daily/102",
   },
+  {
+    date: "2026-06-17",
+    title: "Leccion 103: Pausa estrategica: antes de seguir construyendo, toca ordenar el proyecto",
+    href: "/daily/103",
+  },
 ];
 
 function normalizeLessonTitle(commitMessage: string): { lessonNumber: number | null } {
