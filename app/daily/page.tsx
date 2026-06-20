@@ -233,7 +233,7 @@ const plannedLessons: CalendarLesson[] = [
   },
   {
     date: "2026-06-20",
-    title: "Leccion 106: OrderService",
+    title: "Leccion 106: Application Services: convertir reglas del dominio en casos de uso",
     href: "/daily/106",
   },
   {
