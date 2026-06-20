@@ -221,6 +221,51 @@ const plannedLessons: CalendarLesson[] = [
     title: "Leccion 103: Pausa estrategica: antes de seguir construyendo, toca ordenar el proyecto",
     href: "/daily/103",
   },
+  {
+    date: "2026-06-18",
+    title: "Leccion 104: Dominio primero: si el modelo esta mal, todo lo demas estara mal",
+    href: "/daily/104",
+  },
+  {
+    date: "2026-06-19",
+    title: "Leccion 105: Repositorios: conectar el dominio con la persistencia sin contaminar las reglas de negocio",
+    href: "/daily/105",
+  },
+  {
+    date: "2026-06-20",
+    title: "Leccion 106: OrderService",
+    href: "/daily/106",
+  },
+  {
+    date: "2026-06-21",
+    title: "Leccion 107: OrdersController",
+    href: "/daily/107",
+  },
+  {
+    date: "2026-06-22",
+    title: "Leccion 108: Payments",
+    href: "/daily/108",
+  },
+  {
+    date: "2026-06-23",
+    title: "Leccion 109: AuditLog",
+    href: "/daily/109",
+  },
+  {
+    date: "2026-06-24",
+    title: "Leccion 110: Hardening de API",
+    href: "/daily/110",
+  },
+  {
+    date: "2026-06-25",
+    title: "Leccion 111: Dockerizacion revisada",
+    href: "/daily/111",
+  },
+  {
+    date: "2026-06-26",
+    title: "Leccion 112: Kubernetes basico",
+    href: "/daily/112",
+  },
 ];
 
 function normalizeLessonTitle(commitMessage: string): { lessonNumber: number | null } {
