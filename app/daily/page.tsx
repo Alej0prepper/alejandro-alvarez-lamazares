@@ -243,7 +243,7 @@ const plannedLessons: CalendarLesson[] = [
   },
   {
     date: "2026-06-22",
-    title: "Leccion 108: Payments",
+    title: "Leccion 108: Payments: cuando una operacion afecta varias entidades al mismo tiempo",
     href: "/daily/108",
   },
   {
