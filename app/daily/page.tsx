@@ -238,7 +238,7 @@ const plannedLessons: CalendarLesson[] = [
   },
   {
     date: "2026-06-21",
-    title: "Leccion 107: OrdersController",
+    title: "Leccion 107: Controllers y DTOs: exponer los casos de uso sin ensuciar la API",
     href: "/daily/107",
   },
   {
