@@ -248,7 +248,7 @@ const plannedLessons: CalendarLesson[] = [
   },
   {
     date: "2026-06-23",
-    title: "Leccion 109: AuditLog",
+    title: "Leccion 109: Auditoria: como saber quien hizo que, cuando y sobre que",
     href: "/daily/109",
   },
   {
