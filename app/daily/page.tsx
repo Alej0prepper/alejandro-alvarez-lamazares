@@ -253,7 +253,7 @@ const plannedLessons: CalendarLesson[] = [
   },
   {
     date: "2026-06-24",
-    title: "Leccion 110: Hardening de API",
+    title: "Leccion 110: Hardening de API: convertir una API que funciona en una API preparada para errores reales",
     href: "/daily/110",
   },
   {
