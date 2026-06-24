@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../page.module.css";
+import styles from "./page.module.css";
 
 type LessonCard = {
   day: string;
@@ -63,66 +63,122 @@ export default async function ProfilePage() {
 
   return (
     <main className={styles.page}>
-      <section className={styles.hero}>
-        <div className={styles.heroContent}>
-          <div>
-            <h1>Alejandro Alvarez Lamazares</h1>
-            <p className={styles.subtitle}>
-              Soy licenciado en Ciencia de la Computacion y actualmente trabajo como desarrollador backend en lenguaje
-              C#.
-            </p>
-            <div className={styles.tags}>
-              <span>Licenciado en Ciencia de la Computacion</span>
-              <span>Backend Developer</span>
-              <span>C#</span>
-              <span>REST Lite</span>
-              <span>Daily Lessons</span>
-              <span>Knowledge Sharing</span>
+      <header className={styles.topbar}>
+        <div className={styles.topbarInner}>
+          <div className={styles.brand}>
+            <div className={styles.logo} aria-hidden="true" />
+            <div className={styles.brandCopy}>
+              <h1>Alejandro Alvarez</h1>
+              <p className={styles.brandSub}>Backend • C# • Daily Lessons</p>
             </div>
-            <p className={styles.subtitle}>
-              Esta es una pagina donde puedo plasmar conocimiento para compartir con la comunidad.
-            </p>
-            <div className={styles.actions}>
-              <Link href="/atlas" className={styles.buttonPrimary}>
-                Atlas
-              </Link>
-              <Link href="/daily" className={styles.button}>
-                Ver Archivo Daily
-              </Link>
-            </div>
-            <p className={styles.footer}>
-              Repositorio oficial del proyecto:{" "}
-              <a
-                href="https://github.com/Alej0prepper/alejandro-alvarez-lamazares"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Alej0prepper/alejandro-alvarez-lamazares
-              </a>
-            </p>
           </div>
 
-          <aside className={styles.heroPreview} aria-label="Placeholder de imagen principal">
-            <div className={styles.imagePlaceholder}>
-              <Image src="/images/hero.png" alt="Foto de perfil" fill priority className={styles.heroPhoto} />
+          <nav className={styles.nav} aria-label="Secciones">
+            <a href="#inicio" className={styles.navLink}>
+              Inicio
+            </a>
+            <a href="#lecciones" className={styles.navLink}>
+              Lecciones
+            </a>
+            <Link href="/atlas" className={styles.navLink}>
+              Proyecto
+            </Link>
+            <a href="#contacto" className={styles.navLink}>
+              Contacto
+            </a>
+          </nav>
+
+          <button className={styles.iconButton} type="button" aria-label="Cambiar tema">
+            ◐
+          </button>
+        </div>
+      </header>
+
+      <section className={styles.hero} id="inicio">
+        <div className={styles.heroGrid}>
+          <div className={styles.heroCopy}>
+            <p className={styles.kicker}>Backend Developer. Educator. Constructor.</p>
+            <h2 className={styles.heroTitle}>
+              Backend Developer.
+              <br />
+              Educator.
+              <span>Constructor.</span>
+            </h2>
+            <p className={styles.heroLead}>
+              Comparto una lectura clara sobre backend y desarrollo práctico para construir piezas reales, entender
+              arquitectura y avanzar con criterio.
+            </p>
+            <div className={styles.heroActions}>
+              <Link href="/daily" className={styles.buttonPrimary}>
+                Ver Lecciones Diarias
+              </Link>
+              <Link href="/atlas" className={styles.button}>
+                Ver Proyecto
+              </Link>
+            </div>
+            <div className={styles.socialRow} aria-label="Canales">
+              <a className={styles.socialButton} href="https://github.com/Alej0prepper" target="_blank" rel="noreferrer">
+                GH
+              </a>
+              <a className={styles.socialButton} href="https://www.linkedin.com" target="_blank" rel="noreferrer">
+                IN
+              </a>
+              <a className={styles.socialButton} href="mailto:alejo@example.com">
+                @
+              </a>
+              <a className={styles.socialButton} href="/daily">
+                DL
+              </a>
+            </div>
+          </div>
+
+          <aside className={styles.heroVisual} aria-label="Imagen de perfil">
+            <div className={styles.heroFrame}>
+              <Image src="/images/hero.png" alt="Perfil de Alejandro Alvarez" fill priority className={styles.heroPhoto} />
+              <div className={styles.heroOverlay}>
+                <span className={styles.overlayTag}>Backend</span>
+                <span className={styles.overlayTag}>C#</span>
+              </div>
             </div>
           </aside>
         </div>
       </section>
 
-      <section className={styles.dailySection}>
-        <div className={styles.dailyHeader}>
-          <h2>Daily Lessons</h2>
-          <p>Lecciones cortas diarias. Haz click en una card para abrirla.</p>
+      <section className={styles.dailySection} id="lecciones">
+          <div className={styles.sectionHeader}>
+            <div>
+              <h2>Daily Lessons</h2>
+              <p>Lecciones cortas diarias. Haz click en una card para abrirla.</p>
+            </div>
+          <Link href="/daily" className={styles.sectionLink}>
+            Abrir archivo
+          </Link>
         </div>
 
         <div className={styles.dailyGrid}>
-          {lessons.map((lesson) => (
+          {lessons.slice(0, 6).map((lesson) => (
             <Link key={lesson.href} href={lesson.href} className={styles.lessonCard}>
               <span className={styles.day}>{lesson.day}</span>
               <h3>{lesson.title}</h3>
             </Link>
           ))}
+        </div>
+      </section>
+
+      <section className={styles.contactSection} id="contacto">
+        <div className={styles.contactCard}>
+          <p className={styles.infoLabel}>Contacto</p>
+          <h3>Repositorio oficial y punto de entrada a mi trabajo publico.</h3>
+          <p className={styles.footer}>
+            Repositorio oficial del proyecto:{" "}
+            <a
+              href="https://github.com/Alej0prepper/alejandro-alvarez-lamazares"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Alej0prepper/alejandro-alvarez-lamazares
+            </a>
+          </p>
         </div>
       </section>
     </main>

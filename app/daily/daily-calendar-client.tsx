@@ -106,10 +106,9 @@ export default function DailyCalendarClient({ lessons }: Props) {
         <header className={styles.header}>
           <div>
             <h1>Calendario de Lecciones</h1>
-            <p>Tarjetas por dia usando commits_con_fechas.txt</p>
           </div>
-          <Link href="/" className={styles.homeButton}>
-            Volver al Home
+          <Link href="/daily" className={styles.homeButton}>
+            Volver al Listado
           </Link>
         </header>
 
