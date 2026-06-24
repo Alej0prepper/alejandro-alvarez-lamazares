@@ -113,9 +113,11 @@ export default function NotFoundClient() {
   }, []);
 
   const resetGame = useCallback((autoStart = true) => {
-    const initial = createInitialState();
-    initial.best = gameRef.current.best;
-    initial.status = autoStart ? "playing" : "ready";
+    const initial: GameState = {
+      ...createInitialState(),
+      best: gameRef.current.best,
+      status: autoStart ? "playing" : "ready",
+    };
     gameRef.current = initial;
     lastTimeRef.current = null;
     setGame(initial);
@@ -142,7 +144,7 @@ export default function NotFoundClient() {
       }
 
       if (current.status === "ready") {
-        const started = { ...current, status: "playing", ducking: false };
+        const started: GameState = { ...current, status: "playing", ducking: false };
         gameRef.current = started;
         setGame(started);
         pushFlash();
@@ -150,7 +152,7 @@ export default function NotFoundClient() {
       }
 
       if (current.playerY === 0) {
-        const jumped = {
+        const jumped: GameState = {
           ...current,
           status: "playing",
           ducking: forceDuckOff ? false : current.ducking,

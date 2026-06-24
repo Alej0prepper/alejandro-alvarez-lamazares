@@ -6,7 +6,7 @@ export type LessonCard = {
   title: string;
   href: string;
   dayNumber: number;
-  date?: string;
+  date: string;
 };
 
 function normalizeLessonTitle(commitMessage: string): { lessonNumber: number | null } {
@@ -326,6 +326,17 @@ const plannedLessons = [
 export async function getDailyLessons(): Promise<LessonCard[]> {
   const lessonTitlesByDay = await getLessonTitlesByDay();
 
+  const enrichLesson = (lesson: { date: string; title: string; href: string }): LessonCard => {
+    const dayNumberMatch = lesson.href.match(/\/daily\/(\d+)/);
+    const dayNumber = dayNumberMatch ? Number(dayNumberMatch[1]) : 0;
+
+    return {
+      ...lesson,
+      day: `Day ${dayNumber}`,
+      dayNumber,
+    };
+  };
+
   const filePath = path.join(process.cwd(), "commits_con_fechas.txt");
   let content = "";
   try {
@@ -351,8 +362,10 @@ export async function getDailyLessons(): Promise<LessonCard[]> {
 
       return {
         date,
+        day: `Day ${lessonNumber}`,
         title: lessonTitlesByDay.get(lessonNumber) ?? `Leccion ${lessonNumber}`,
         href: `/daily/${lessonNumber}`,
+        dayNumber: lessonNumber,
       };
     })
     .filter((item): item is LessonCard => item !== null)
@@ -360,9 +373,9 @@ export async function getDailyLessons(): Promise<LessonCard[]> {
 
   const committedHrefs = new Set(committedLessons.map((lesson) => lesson.href).filter(Boolean));
   const missingPublishedLessons = publishedLessons.filter((lesson) => !committedHrefs.has(lesson.href));
-  const availableLessons = [...committedLessons, ...missingPublishedLessons];
+  const availableLessons = [...committedLessons, ...missingPublishedLessons].map(enrichLesson);
   const availableTitles = new Set(availableLessons.map((lesson) => lesson.title));
-  const futureLessons = plannedLessons.filter((lesson) => !availableTitles.has(lesson.title));
+  const futureLessons = plannedLessons.filter((lesson) => !availableTitles.has(lesson.title)).map(enrichLesson);
 
   return [...availableLessons, ...futureLessons].sort((a, b) => a.date.localeCompare(b.date));
 }
