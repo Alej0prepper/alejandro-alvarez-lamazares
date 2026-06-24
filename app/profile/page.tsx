@@ -1,77 +1,182 @@
-import fs from "node:fs/promises";
-import path from "node:path";
 import Image from "next/image";
 import Link from "next/link";
+import type { CSSProperties } from "react";
+import { getLatestPublishedLessons } from "../daily/lessons-data";
 import styles from "./page.module.css";
 
-type LessonCard = {
-  day: string;
-  title: string;
-  href: string;
+type Lesson = Awaited<ReturnType<typeof getLatestPublishedLessons>>[number];
+
+type LessonTone = {
+  label: string;
+  accent: string;
+  accentSoft: string;
+  glow: string;
 };
 
-function getLessonTitleFromMetadata(rawTitle: string, day: number): string {
-  const fromParentheses = rawTitle.match(/\(([^)]+)\)\s*$/)?.[1]?.trim();
-  if (fromParentheses) return fromParentheses;
+const lessonTones: Record<string, LessonTone> = {
+  Arquitectura: {
+    label: "ARQUITECTURA",
+    accent: "#60A5FA",
+    accentSoft: "rgba(59, 130, 246, 0.15)",
+    glow: "rgba(59, 130, 246, 0.4)",
+  },
+  DDD: {
+    label: "DDD",
+    accent: "#4ADE80",
+    accentSoft: "rgba(34, 197, 94, 0.15)",
+    glow: "rgba(34, 197, 94, 0.4)",
+  },
+  "API Design": {
+    label: "API DESIGN",
+    accent: "#C084FC",
+    accentSoft: "rgba(168, 85, 247, 0.15)",
+    glow: "rgba(168, 85, 247, 0.4)",
+  },
+  Persistencia: {
+    label: "PERSISTENCIA",
+    accent: "#FBBF24",
+    accentSoft: "rgba(245, 158, 11, 0.15)",
+    glow: "rgba(245, 158, 11, 0.4)",
+  },
+  Seguridad: {
+    label: "SEGURIDAD",
+    accent: "#6ce0d2",
+    accentSoft: "rgba(108, 224, 210, 0.16)",
+    glow: "rgba(108, 224, 210, 0.42)",
+  },
+  Plataforma: {
+    label: "PLATAFORMA",
+    accent: "#ff7b7b",
+    accentSoft: "rgba(255, 123, 123, 0.16)",
+    glow: "rgba(255, 123, 123, 0.42)",
+  },
+  General: {
+    label: "GENERAL",
+    accent: "#9aa8bf",
+    accentSoft: "rgba(154, 168, 191, 0.16)",
+    glow: "rgba(154, 168, 191, 0.42)",
+  },
+};
 
-  const withoutPrefix = rawTitle.replace(/^Daily Backend\s*-\s*Dia\s*\d+\s*/i, "").replace(/^[-:]\s*/, "").trim();
-  if (withoutPrefix) return withoutPrefix;
+function getLessonTone(title: string, dayNumber: number | null): LessonTone {
+  const normalized = title.toLowerCase();
 
-  return `Leccion dia ${day}`;
+  if (dayNumber === 109 || normalized.includes("auditor")) {
+    return lessonTones.Arquitectura;
+  }
+
+  if (dayNumber === 108 || normalized.includes("payment")) {
+    return lessonTones.DDD;
+  }
+
+  if (dayNumber === 107 || normalized.includes("controller") || normalized.includes("dto")) {
+    return lessonTones["API Design"];
+  }
+
+  if (dayNumber === 106 || normalized.includes("application service")) {
+    return lessonTones.Persistencia;
+  }
+
+  if (dayNumber === 105 || normalized.includes("repository") || normalized.includes("repositorio")) {
+    return lessonTones.DDD;
+  }
+
+  if (normalized.includes("docker") || normalized.includes("kubernetes") || normalized.includes("deploy")) {
+    return lessonTones.Plataforma;
+  }
+
+  if (normalized.includes("seguridad") || normalized.includes("hardening") || normalized.includes("threat")) {
+    return lessonTones.Seguridad;
+  }
+
+  if (normalized.includes("persist") || normalized.includes("repo") || normalized.includes("migracion")) {
+    return lessonTones.Persistencia;
+  }
+
+  if (normalized.includes("api") || normalized.includes("controller") || normalized.includes("dto") || normalized.includes("endpoint")) {
+    return lessonTones["API Design"];
+  }
+
+  if (normalized.includes("ddd") || normalized.includes("dominio") || normalized.includes("order") || normalized.includes("servicio")) {
+    return lessonTones.DDD;
+  }
+
+  if (normalized.includes("arquitect")) {
+    return lessonTones.Arquitectura;
+  }
+
+  return lessonTones.General;
 }
 
-async function getDailyLessons(): Promise<LessonCard[]> {
-  const dailyDir = path.join(process.cwd(), "app", "daily");
-  const entries = await fs.readdir(dailyDir, { withFileTypes: true });
+function getDisplayDate(rawDate?: string) {
+  if (!rawDate) return "";
 
-  const dailyFolders = entries.filter((entry) => entry.isDirectory() && /^\d+$/.test(entry.name));
+  return new Intl.DateTimeFormat("es-ES", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  }).format(new Date(`${rawDate}T12:00:00`));
+}
 
-  const validated = await Promise.all(
-    dailyFolders.map(async (entry) => {
-      const routePagePath = path.join(dailyDir, entry.name, "page.tsx");
-      try {
-        await fs.access(routePagePath);
-        const day = Number(entry.name);
-        const routePageContent = await fs.readFile(routePagePath, "utf8");
-        const metadataTitleMatch = routePageContent.match(/title:\s*["']([^"']+)["']/);
-        const title = metadataTitleMatch ? getLessonTitleFromMetadata(metadataTitleMatch[1], day) : `Leccion dia ${day}`;
+function getDisplayDayLabel(lesson: Lesson) {
+  return `DAY ${lesson.dayNumber}`;
+}
 
-        return {
-          day: `Day ${day}`,
-          title,
-          href: `/daily/${day}`,
-          dayNumber: day,
-        };
-      } catch {
-        return null;
+function getDisplayCategory(lesson: Lesson) {
+  return getLessonTone(lesson.title, lesson.dayNumber);
+}
+
+function LessonCard({ lesson }: { lesson: Lesson }) {
+  const tone = getDisplayCategory(lesson);
+
+  return (
+    <Link
+      href={lesson.href}
+      className={styles.lessonCard}
+      style={
+        {
+          "--card-accent": tone.accent,
+          "--card-accent-soft": tone.accentSoft,
+          "--card-glow": tone.glow,
+        } as CSSProperties
       }
-    })
-  );
+    >
+      <span className={styles.cardCategory}>
+        <span className={styles.cardIcon} aria-hidden="true" />
+        {tone.label}
+      </span>
 
-  return validated
-    .filter((item): item is LessonCard & { dayNumber: number } => item !== null)
-    .sort((a, b) => b.dayNumber - a.dayNumber)
-    .map((item) => ({
-      day: item.day,
-      title: item.title,
-      href: item.href,
-    }));
+      <span className={styles.day}>{getDisplayDayLabel(lesson)}</span>
+
+      <div className={styles.lessonBody}>
+        <h3>{lesson.title}</h3>
+      </div>
+
+      <div className={styles.cardFooter}>
+        <time className={styles.lessonDate} dateTime={lesson.date ?? ""}>
+          {getDisplayDate(lesson.date)}
+        </time>
+        <span className={styles.cardArrow} aria-hidden="true">
+          →
+        </span>
+      </div>
+    </Link>
+  );
 }
 
 export default async function ProfilePage() {
-  const lessons = await getDailyLessons();
+  const featuredLessons = await getLatestPublishedLessons(5);
 
   return (
     <main className={styles.page}>
       <header className={styles.topbar}>
         <div className={styles.topbarInner}>
-          <div className={styles.brand}>
-            <div className={styles.logo} aria-hidden="true" />
-            <div className={styles.brandCopy}>
-              <h1>Alejandro Alvarez</h1>
-              <p className={styles.brandSub}>Backend • C# • Daily Lessons</p>
+            <div className={styles.brand}>
+              <div className={styles.logo} aria-hidden="true" />
+              <div className={styles.brandCopy}>
+                <h1>Alejandro Alvarez</h1>
+              </div>
             </div>
-          </div>
 
           <nav className={styles.nav} aria-label="Secciones">
             <a href="#inicio" className={styles.navLink}>
@@ -145,22 +250,19 @@ export default async function ProfilePage() {
       </section>
 
       <section className={styles.dailySection} id="lecciones">
-          <div className={styles.sectionHeader}>
-            <div>
-              <h2>Daily Lessons</h2>
-              <p>Lecciones cortas diarias. Haz click en una card para abrirla.</p>
-            </div>
+        <div className={styles.sectionHeader}>
+          <div className={styles.sectionTitleWrap}>
+            <span className={styles.sectionIcon} aria-hidden="true" />
+            <h2>Lecciones Diarias</h2>
+          </div>
           <Link href="/daily" className={styles.sectionLink}>
-            Abrir archivo
+            Ver todas
           </Link>
         </div>
 
-        <div className={styles.dailyGrid}>
-          {lessons.slice(0, 6).map((lesson) => (
-            <Link key={lesson.href} href={lesson.href} className={styles.lessonCard}>
-              <span className={styles.day}>{lesson.day}</span>
-              <h3>{lesson.title}</h3>
-            </Link>
+        <div className={styles.dailyTrack} aria-label="Lecciones recientes">
+          {featuredLessons.map((lesson) => (
+            <LessonCard key={lesson.href} lesson={lesson} />
           ))}
         </div>
       </section>

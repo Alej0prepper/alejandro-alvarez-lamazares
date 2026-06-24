@@ -323,7 +323,7 @@ const plannedLessons = [
   },
 ];
 
-export async function getDailyLessons(): Promise<CalendarLesson[]> {
+export async function getDailyLessons(): Promise<LessonCard[]> {
   const lessonTitlesByDay = await getLessonTitlesByDay();
 
   const filePath = path.join(process.cwd(), "commits_con_fechas.txt");
@@ -338,7 +338,7 @@ export async function getDailyLessons(): Promise<CalendarLesson[]> {
     .split("\n")
     .map((line) => line.trim())
     .filter(Boolean)
-    .map((line): CalendarLesson | null => {
+    .map((line): LessonCard | null => {
       const parts = line.split("|");
       if (parts.length < 2) return null;
 
@@ -355,7 +355,7 @@ export async function getDailyLessons(): Promise<CalendarLesson[]> {
         href: `/daily/${lessonNumber}`,
       };
     })
-    .filter((item): item is CalendarLesson => item !== null)
+    .filter((item): item is LessonCard => item !== null)
     .sort((a, b) => a.date.localeCompare(b.date));
 
   const committedHrefs = new Set(committedLessons.map((lesson) => lesson.href).filter(Boolean));
@@ -365,4 +365,14 @@ export async function getDailyLessons(): Promise<CalendarLesson[]> {
   const futureLessons = plannedLessons.filter((lesson) => !availableTitles.has(lesson.title));
 
   return [...availableLessons, ...futureLessons].sort((a, b) => a.date.localeCompare(b.date));
+}
+
+export async function getLatestPublishedLessons(limit = 5): Promise<LessonCard[]> {
+  const today = new Date().toISOString().slice(0, 10);
+  const lessons = await getDailyLessons();
+
+  return lessons
+    .filter((lesson) => lesson.date <= today)
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .slice(0, limit);
 }
