@@ -313,7 +313,8 @@ const plannedLessons = [
   },
   {
     date: "2026-06-25",
-    title: "Leccion 111: Dockerizacion revisada",
+    title:
+      "Leccion 111: Dockerización de la API: convertir un proyecto de desarrollo en una aplicación portable",
     href: "/daily/111",
   },
   {
