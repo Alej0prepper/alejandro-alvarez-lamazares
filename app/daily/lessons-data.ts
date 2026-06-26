@@ -319,7 +319,7 @@ const plannedLessons = [
   },
   {
     date: "2026-06-26",
-    title: "Leccion 112: Kubernetes basico",
+    title: "Leccion 112: Kubernetes: desplegar una aplicacion para que sobreviva, escale y se recupere sola",
     href: "/daily/112",
   },
 ];
