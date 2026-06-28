@@ -322,6 +322,16 @@ const plannedLessons = [
     title: "Leccion 112: Kubernetes: desplegar una aplicacion para que sobreviva, escale y se recupere sola",
     href: "/daily/112",
   },
+  {
+    date: "2026-06-27",
+    title: "Leccion 113: Pausa para respirar",
+    href: "/daily/113",
+  },
+  {
+    date: "2026-06-28",
+    title: "Leccion 114: Como seguimos",
+    href: "/daily/114",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
