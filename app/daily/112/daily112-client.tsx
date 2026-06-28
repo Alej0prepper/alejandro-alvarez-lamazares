@@ -20,6 +20,7 @@ const tocItems = [
   { id: "checklist", label: "13) Checklist" },
   { id: "mistakes", label: "14) Errores" },
   { id: "closing", label: "15) Cierre" },
+  { id: "next-block", label: "16) Siguiente bloque" },
 ] as const;
 
 const dockerSnippet = `OrderFlow API
@@ -119,6 +120,47 @@ const closingSnippet = `Docker empaqueta.
 Kubernetes opera.
 
 La aplicacion debe sobrevivir, escalar y recuperarse sola.`;
+
+const nextBlockSnippet = `Arquitectura de Sistemas Distribuidos
+
+113 Monolito vs Monolito Modular vs Microservicios
+114 Bounded Context
+115 Comunicacion sincrona
+116 Comunicacion asincrona
+117 API Gateway
+118 Service Discovery
+119 Configuracion distribuida
+120 Observabilidad distribuida
+121 Transacciones distribuidas
+122 Saga Pattern
+123 Outbox Pattern
+124 Inbox Pattern
+125 Idempotencia
+126 Consistencia eventual
+127 Versionado entre servicios
+128 Fallos en cascada
+129 Arquitectura completa de un eCommerce
+130 Simulacion completa de una plataforma distribuida`;
+
+const seasonsSnippet = `Temporada 1 (4-50)
+Fundamentos del Backend Profesional
+
+Temporada 2 (51-70)
+Seguridad
+
+Temporada 3 (71-90)
+Performance y Produccion
+
+Temporada 4 (91-112)
+Contenedores y despliegue de una API real
+
+Temporada 5 (113-130)
+Sistemas Distribuidos y Microservicios`;
+
+const laterRoadmapSnippet = `131-150 Persistencia avanzada
+151-170 Cloud
+171-190 Arquitectura empresarial
+191-210 Proyecto gigante`;
 
 const summaryLines = [
   "Deployment define el estado deseado.",
@@ -466,6 +508,33 @@ export default function Daily112Client() {
                     <Link className={`${styles.btn} ${styles.primary}`} href="/daily">
                       Ver calendario
                     </Link>
+                  </div>
+                </div>
+              </section>
+
+              <section className={styles.section} id="next-block">
+                <div className={styles.shd}>
+                  <div>
+                    <h3>16. El siguiente gran bloque</h3>
+                    <p className={styles.sub}>Dejar conceptos aislados y empezar a estudiar sistemas que usan las grandes empresas.</p>
+                  </div>
+                  <span className={styles.chip}>Roadmap</span>
+                </div>
+                <div className={styles.sbd}>
+                  <p>
+                    A partir del dia 113 la transicion natural es hacia arquitectura de sistemas distribuidos. Todavia
+                    no hace falta saltar a Event Sourcing o Kafka como tema central.
+                  </p>
+                  <pre>{nextBlockSnippet}</pre>
+                  <div className={styles.callout}>
+                    Este bloque encaja muy bien con OrderFlow y con eStore CSA, porque ya convive con gateway,
+                    multiples APIs, RabbitMQ, Redis, PostgreSQL, MongoDB y Docker Compose.
+                  </div>
+                  <h4>Temporadas</h4>
+                  <pre>{seasonsSnippet}</pre>
+                  <pre>{laterRoadmapSnippet}</pre>
+                  <div className={styles.quote}>
+                    A esta altura ya no estudias clases sueltas. Empiezas a ordenar el contenido por temporadas.
                   </div>
                 </div>
               </section>
