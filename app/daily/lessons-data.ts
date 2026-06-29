@@ -332,6 +332,11 @@ const plannedLessons = [
     title: "Leccion 114: Como seguimos",
     href: "/daily/114",
   },
+  {
+    date: "2026-06-29",
+    title: "Leccion 115: Monolito vs Monolito Modular vs Microservicios: elegir la arquitectura correcta, no la más popular",
+    href: "/daily/115",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
