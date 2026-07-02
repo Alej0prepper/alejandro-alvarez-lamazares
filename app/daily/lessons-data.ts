@@ -347,6 +347,11 @@ const plannedLessons = [
     title: "Leccion 117: Comunicacion sincronica vs asincronica: cuando esperar una respuesta y cuando continuar sin ella",
     href: "/daily/117",
   },
+  {
+    date: "2026-07-02",
+    title: "Leccion 118: API Gateway: el punto de entrada de una arquitectura de microservicios",
+    href: "/daily/118",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
