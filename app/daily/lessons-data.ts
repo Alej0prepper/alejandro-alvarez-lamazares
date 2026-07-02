@@ -337,6 +337,16 @@ const plannedLessons = [
     title: "Leccion 115: Monolito vs Monolito Modular vs Microservicios: elegir la arquitectura correcta, no la más popular",
     href: "/daily/115",
   },
+  {
+    date: "2026-06-30",
+    title: "Leccion 116: Comunicacion entre microservicios: REST, gRPC y Mensajeria",
+    href: "/daily/116",
+  },
+  {
+    date: "2026-07-01",
+    title: "Leccion 117: Comunicacion sincronica vs asincronica: cuando esperar una respuesta y cuando continuar sin ella",
+    href: "/daily/117",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
