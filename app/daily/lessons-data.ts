@@ -352,6 +352,11 @@ const plannedLessons = [
     title: "Leccion 118: API Gateway: el punto de entrada de una arquitectura de microservicios",
     href: "/daily/118",
   },
+  {
+    date: "2026-07-03",
+    title: "Leccion 119: Service Discovery: como encuentran los microservicios a otros microservicios",
+    href: "/daily/119",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
