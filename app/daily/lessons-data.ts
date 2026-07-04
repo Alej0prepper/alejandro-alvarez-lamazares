@@ -357,6 +357,11 @@ const plannedLessons = [
     title: "Leccion 119: Service Discovery: como encuentran los microservicios a otros microservicios",
     href: "/daily/119",
   },
+  {
+    date: "2026-07-04",
+    title: "Leccion 120: RabbitMQ desde cero: entender colas, exchanges y routing",
+    href: "/daily/120",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
