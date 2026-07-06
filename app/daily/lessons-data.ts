@@ -362,6 +362,11 @@ const plannedLessons = [
     title: "Leccion 120: RabbitMQ desde cero: entender colas, exchanges y routing",
     href: "/daily/120",
   },
+  {
+    date: "2026-07-06",
+    title: "Leccion 121: Event-Driven Architecture: construir sistemas basados en eventos",
+    href: "/daily/121",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
