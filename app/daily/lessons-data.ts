@@ -363,7 +363,7 @@ const plannedLessons = [
     href: "/daily/120",
   },
   {
-    date: "2026-07-06",
+    date: "2026-07-05",
     title: "Leccion 121: Event-Driven Architecture: construir sistemas basados en eventos",
     href: "/daily/121",
   },

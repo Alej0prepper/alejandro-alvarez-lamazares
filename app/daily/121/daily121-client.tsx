@@ -257,7 +257,7 @@ export default function Daily121Client() {
           <article className={styles.card}>
             <div className={styles.bd}>
               <div className={styles.dailyHero}>
-                <div className={styles.createdAt}>06/07/2026</div>
+                <div className={styles.createdAt}>05/07/2026</div>
                 <div className={styles.badge}>Daily #121 • Event-Driven</div>
                 <h2 className={styles.title}>Event-Driven Architecture: construir sistemas basados en eventos</h2>
                 <p className={styles.lead}>
