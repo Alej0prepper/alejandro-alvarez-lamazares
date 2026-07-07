@@ -217,8 +217,11 @@
 }
 
 .cardPlain {
-  color: rgba(255, 255, 255, 0.66);
+  color: rgba(255, 255, 255, 0.48);
+  background: rgba(3, 10, 23, 0.42);
+  border-color: rgba(255, 255, 255, 0.08);
   border-style: dashed;
+  cursor: default;
 }
 
 @media (max-width: 980px) {
