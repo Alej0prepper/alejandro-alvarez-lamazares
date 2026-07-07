@@ -367,6 +367,11 @@ const plannedLessons = [
     title: "Leccion 121: Event-Driven Architecture: construir sistemas basados en eventos",
     href: "/daily/121",
   },
+  {
+    date: "2026-07-06",
+    title: "Leccion 122: Saga Pattern: coordinar procesos distribuidos sin usar una transaccion gigante",
+    href: "/daily/122",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
