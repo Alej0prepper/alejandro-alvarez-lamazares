@@ -372,6 +372,11 @@ const plannedLessons = [
     title: "Leccion 122: Saga Pattern: coordinar procesos distribuidos sin usar una transaccion gigante",
     href: "/daily/122",
   },
+  {
+    date: "2026-07-07",
+    title: "Leccion 123: Outbox Pattern: como publicar eventos sin perder consistencia",
+    href: "/daily/123",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {

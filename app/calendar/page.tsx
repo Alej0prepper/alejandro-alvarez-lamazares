@@ -3,11 +3,6 @@ import DailyCalendarClient, { type CalendarLesson } from "../daily/daily-calenda
 
 const plannedCalendarLessons: CalendarLesson[] = [
   {
-    date: "2026-07-07",
-    title: "Leccion 123: Outbox Pattern: publicar eventos sin perder consistencia",
-    href: null,
-  },
-  {
     date: "2026-07-08",
     title: "Leccion 124: Idempotencia en consumidores",
     href: null,
