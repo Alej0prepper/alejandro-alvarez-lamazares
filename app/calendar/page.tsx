@@ -3,16 +3,6 @@ import DailyCalendarClient, { type CalendarLesson } from "../daily/daily-calenda
 
 const plannedCalendarLessons: CalendarLesson[] = [
   {
-    date: "2026-07-08",
-    title: "Leccion 124: Idempotencia en consumidores",
-    href: null,
-  },
-  {
-    date: "2026-07-09",
-    title: "Leccion 125: Dead Letter Queues (DLQ) y estrategias de reintento",
-    href: null,
-  },
-  {
     date: "2026-07-10",
     title: "Leccion 126: CQRS avanzado",
     href: null,

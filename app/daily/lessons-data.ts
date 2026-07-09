@@ -377,6 +377,16 @@ const plannedLessons = [
     title: "Leccion 123: Outbox Pattern: como publicar eventos sin perder consistencia",
     href: "/daily/123",
   },
+  {
+    date: "2026-07-08",
+    title: "Leccion 124: Idempotencia en consumidores: como evitar procesar el mismo mensaje dos veces",
+    href: "/daily/124",
+  },
+  {
+    date: "2026-07-09",
+    title: "Leccion 125: Dead Letter Queues: que hacer cuando un mensaje nunca puede procesarse",
+    href: "/daily/125",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
