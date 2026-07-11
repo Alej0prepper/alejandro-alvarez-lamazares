@@ -387,6 +387,11 @@ const plannedLessons = [
     title: "Leccion 125: Dead Letter Queues: que hacer cuando un mensaje nunca puede procesarse",
     href: "/daily/125",
   },
+  {
+    date: "2026-07-10",
+    title: "Leccion 126: CQRS avanzado: separar lectura y escritura cuando el negocio lo necesita",
+    href: "/daily/126",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {

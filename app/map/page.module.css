@@ -87,7 +87,7 @@
 .map :global(.leaflet-popup-content h3) {
   margin: 0 0 8px;
   color: #17233a;
-  font-family: var(--font-geist-sans), Arial, sans-serif;
+  font-family: var(--font-app-sans);
   font-size: 18px;
 }
 

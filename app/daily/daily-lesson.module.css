@@ -13,7 +13,7 @@
   --warn: #fbd000;
   --bad: #b52e25;
   --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  --sans: var(--font-geist-sans), "Segoe UI", Roboto, Arial, sans-serif;
+  --sans: var(--font-app-sans);
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
   --r: 16px;
 

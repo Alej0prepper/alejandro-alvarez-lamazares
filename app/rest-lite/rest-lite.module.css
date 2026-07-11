@@ -267,7 +267,7 @@
   padding: 12px;
   overflow-x: auto;
   white-space: pre;
-  font-family: var(--font-geist-mono), "JetBrains Mono", "Consolas", monospace;
+  font-family: var(--font-app-mono);
   font-size: 12px;
   line-height: 1.5;
 }
