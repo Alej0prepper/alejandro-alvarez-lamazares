@@ -402,6 +402,11 @@ const plannedLessons = [
     title: "Leccion 128: Consistencia eventual en profundidad: como disenar sistemas donde los datos no cambian al mismo tiempo",
     href: "/daily/128",
   },
+  {
+    date: "2026-07-14",
+    title: "Leccion 130: Observabilidad distribuida: como seguir una peticion a traves de todos los microservicios",
+    href: "/daily/130",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {

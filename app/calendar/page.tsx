@@ -8,11 +8,6 @@ const plannedCalendarLessons: CalendarLesson[] = [
     href: null,
   },
   {
-    date: "2026-07-14",
-    title: "Leccion 130: Observabilidad distribuida",
-    href: null,
-  },
-  {
     date: "2026-07-15",
     title: "Leccion 131: Diseno de APIs para microservicios",
     href: null,
