@@ -397,6 +397,11 @@ const plannedLessons = [
     title: "Leccion 127: Event Sourcing: guardar la historia completa en lugar de sobrescribir el estado",
     href: "/daily/127",
   },
+  {
+    date: "2026-07-12",
+    title: "Leccion 128: Consistencia eventual en profundidad: como disenar sistemas donde los datos no cambian al mismo tiempo",
+    href: "/daily/128",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
