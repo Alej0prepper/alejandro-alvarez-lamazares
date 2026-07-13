@@ -194,6 +194,15 @@ corregir
 alertar
 compensar`;
 
+const reconcileWorkerSnippet = `Worker cada 10 minutos
+↓
+Buscar pagos aprobados sin orden pagada
+↓
+Corregir o alertar
+
+No sustituye la mensajeria correcta.
+Protege frente a errores excepcionales.`;
+
 const patternsSnippet = `Outbox
 ↓
 evita evento perdido
@@ -210,6 +219,24 @@ Saga
 ↓
 lleva el flujo a Completed o Compensated`;
 
+const rabbitSnippet = `RabbitMQ entrega mensajes.
+
+No decide:
+que estado es correcto
+como compensar
+como reconciliar
+que hacer con duplicados
+cuanto retraso acepta el negocio`;
+
+const replicationSnippet = `Notification Service
+puede necesitar:
+OrderId
+CustomerEmail
+Total
+
+No necesita copiar
+todo el modelo de Order.`;
+
 const observabilitySnippet = `Medir:
 edad del mensaje mas antiguo
 cantidad de eventos pendientes
@@ -220,6 +247,14 @@ ordenes en Processing > 5 min
 
 Objetivo:
 95% convergen en menos de 5 segundos`;
+
+const convergenceSnippet = `OrderCreated: 10:00:00
+InventoryUpdated: 10:00:02
+AnalyticsUpdated: 10:00:07
+EmailSent: 10:00:10
+
+Tiempo maximo de convergencia:
+10 segundos`;
 
 const whenSnippet = `Usar consistencia fuerte
 saldo critico
@@ -234,6 +269,15 @@ buscadores
 reportes
 notificaciones
 sincronizacion entre servicios`;
+
+const acceptedResponseSnippet = `Malo
+↓
+200 OK - Pago completado
+cuando solo enviamos el mensaje
+
+Mejor
+↓
+202 Accepted - Pago en procesamiento`;
 
 const exerciseSnippet = `Flujo:
 OrderCreated
@@ -537,6 +581,7 @@ export default function Daily128Client() {
                 <div className={styles.sbd}>
                   <pre>{orderingSnippet}</pre>
                   <pre>{reconcileSnippet}</pre>
+                  <pre>{reconcileWorkerSnippet}</pre>
                 </div>
               </section>
 
@@ -550,6 +595,8 @@ export default function Daily128Client() {
                 </div>
                 <div className={styles.sbd}>
                   <pre>{patternsSnippet}</pre>
+                  <pre>{rabbitSnippet}</pre>
+                  <pre>{replicationSnippet}</pre>
                 </div>
               </section>
 
@@ -563,6 +610,7 @@ export default function Daily128Client() {
                 </div>
                 <div className={styles.sbd}>
                   <pre>{observabilitySnippet}</pre>
+                  <pre>{convergenceSnippet}</pre>
                 </div>
               </section>
 
@@ -576,6 +624,7 @@ export default function Daily128Client() {
                 </div>
                 <div className={styles.sbd}>
                   <pre>{whenSnippet}</pre>
+                  <pre>{acceptedResponseSnippet}</pre>
                   <pre>{exerciseSnippet}</pre>
                 </div>
               </section>
