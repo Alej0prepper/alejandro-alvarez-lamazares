@@ -392,6 +392,11 @@ const plannedLessons = [
     title: "Leccion 126: CQRS avanzado: separar lectura y escritura cuando el negocio lo necesita",
     href: "/daily/126",
   },
+  {
+    date: "2026-07-11",
+    title: "Leccion 127: Event Sourcing: guardar la historia completa en lugar de sobrescribir el estado",
+    href: "/daily/127",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
