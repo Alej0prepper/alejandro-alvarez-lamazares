@@ -3,11 +3,6 @@ import DailyCalendarClient, { type CalendarLesson } from "../daily/daily-calenda
 
 const plannedCalendarLessons: CalendarLesson[] = [
   {
-    date: "2026-07-13",
-    title: "Leccion 129: Resiliencia en microservicios",
-    href: null,
-  },
-  {
     date: "2026-07-15",
     title: "Leccion 131: Diseno de APIs para microservicios",
     href: null,

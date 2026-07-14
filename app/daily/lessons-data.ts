@@ -403,6 +403,11 @@ const plannedLessons = [
     href: "/daily/128",
   },
   {
+    date: "2026-07-13",
+    title: "Leccion 129: Patrones de resiliencia en microservicios: como disenar sistemas que sigan funcionando cuando todo empieza a fallar",
+    href: "/daily/129",
+  },
+  {
     date: "2026-07-14",
     title: "Leccion 130: Observabilidad distribuida: como seguir una peticion a traves de todos los microservicios",
     href: "/daily/130",
