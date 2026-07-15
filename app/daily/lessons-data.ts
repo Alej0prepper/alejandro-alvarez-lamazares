@@ -412,6 +412,11 @@ const plannedLessons = [
     title: "Leccion 130: Observabilidad distribuida: como seguir una peticion a traves de todos los microservicios",
     href: "/daily/130",
   },
+  {
+    date: "2026-07-15",
+    title: "Leccion 131: Diseno de APIs para microservicios: como crear contratos que puedan evolucionar sin romper el sistema",
+    href: "/daily/131",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
