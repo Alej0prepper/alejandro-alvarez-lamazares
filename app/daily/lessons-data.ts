@@ -417,6 +417,11 @@ const plannedLessons = [
     title: "Leccion 131: Diseno de APIs para microservicios: como crear contratos que puedan evolucionar sin romper el sistema",
     href: "/daily/131",
   },
+  {
+    date: "2026-07-16",
+    title: "Leccion 132: Arquitectura completa de un e-commerce moderno: integrando todo lo aprendido",
+    href: "/daily/132",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
