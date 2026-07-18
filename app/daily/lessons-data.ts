@@ -422,6 +422,11 @@ const plannedLessons = [
     title: "Leccion 132: Arquitectura completa de un e-commerce moderno: integrando todo lo aprendido",
     href: "/daily/132",
   },
+  {
+    date: "2026-07-17",
+    title: "Leccion 133: La razon de negocio: por que vamos a convertir OrderFlow en microservicios",
+    href: "/daily/133",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
