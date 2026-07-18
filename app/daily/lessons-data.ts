@@ -427,6 +427,11 @@ const plannedLessons = [
     title: "Leccion 133: La razon de negocio: por que vamos a convertir OrderFlow en microservicios",
     href: "/daily/133",
   },
+  {
+    date: "2026-07-18",
+    title: "Leccion 134: Definir los casos de uso y la demostracion esperada de OrderFlow",
+    href: "/daily/134",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
