@@ -432,6 +432,11 @@ const plannedLessons = [
     title: "Leccion 134: Definir los casos de uso y la demostracion esperada de OrderFlow",
     href: "/daily/134",
   },
+  {
+    date: "2026-07-19",
+    title: "Leccion 135: Identificando los bounded contexts: donde cortar OrderFlow correctamente",
+    href: "/daily/135",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {

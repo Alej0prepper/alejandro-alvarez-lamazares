@@ -389,7 +389,7 @@ Observabilidad
 - trazas distribuidas`;
 
 const deliverableSnippet = `Entregable principal:
-USE_CASES.md
+docs/orderflow/USE_CASES.md
 
 Incluir:
 - descripcion de cada caso de uso

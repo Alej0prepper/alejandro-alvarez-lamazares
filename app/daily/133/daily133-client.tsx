@@ -278,7 +278,7 @@ idempotencia soporta duplicados
 compensacion libera reservas
 TraceId sigue la operacion completa`;
 
-const deliverableSnippet = `ARCHITECTURE_EVOLUTION.md
+const deliverableSnippet = `docs/orderflow/ARCHITECTURE_EVOLUTION.md
 
 1. Contexto actual
 2. Estado del monolito
