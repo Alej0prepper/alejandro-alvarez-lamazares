@@ -437,6 +437,11 @@ const plannedLessons = [
     title: "Leccion 135: Identificando los bounded contexts: donde cortar OrderFlow correctamente",
     href: "/daily/135",
   },
+  {
+    date: "2026-07-20",
+    title: "Leccion 136: Preparando la solucion: crear la arquitectura base antes de migrar",
+    href: "/daily/136",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
