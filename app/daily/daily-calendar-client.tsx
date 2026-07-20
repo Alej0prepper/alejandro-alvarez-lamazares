@@ -99,6 +99,7 @@ export default function DailyCalendarClient({ lessons }: Props) {
 
   const activeMonth = monthRefs[monthIndex];
   const days = buildMonthDays(activeMonth);
+  const activeMonthStart = new Date(activeMonth.year, activeMonth.month, 1);
 
   return (
     <main className={styles.page}>
@@ -143,9 +144,13 @@ export default function DailyCalendarClient({ lessons }: Props) {
             const iso = toIso(day);
             const dayLessons = lessonsByDate[iso] ?? [];
             const inActiveMonth = day.getMonth() === activeMonth.month;
+            const isPreviousMonth = day < activeMonthStart;
 
             return (
-              <article key={iso} className={`${styles.dayCell} ${inActiveMonth ? "" : styles.outMonth}`}>
+              <article
+                key={iso}
+                className={`${styles.dayCell} ${inActiveMonth ? "" : styles.outMonth} ${isPreviousMonth ? styles.previousMonth : ""}`}
+              >
                 <div className={styles.dayNumber}>{day.getDate()}</div>
                 <div className={styles.cards}>
                   {dayLessons.map((lesson, idx) =>
