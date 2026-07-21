@@ -442,6 +442,11 @@ const plannedLessons = [
     title: "Leccion 136: Preparando la solucion: crear la arquitectura base antes de migrar",
     href: "/daily/136",
   },
+  {
+    date: "2026-07-21",
+    title: "Leccion 137: Extraer Catalog como el primer microservicio de OrderFlow",
+    href: "/daily/137",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
