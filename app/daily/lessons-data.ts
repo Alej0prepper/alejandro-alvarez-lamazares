@@ -447,6 +447,11 @@ const plannedLessons = [
     title: "Leccion 137: Extraer Catalog como el primer microservicio de OrderFlow",
     href: "/daily/137",
   },
+  {
+    date: "2026-07-22",
+    title: "Leccion 138: Extraer Orders Service y construir el nucleo del proceso de compra",
+    href: "/daily/138",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
