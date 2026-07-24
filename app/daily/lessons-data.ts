@@ -457,6 +457,11 @@ const plannedLessons = [
     title: "Leccion 139: Crear Inventory Service: gestionar stock y reservar unidades correctamente",
     href: "/daily/139",
   },
+  {
+    date: "2026-07-25",
+    title: "Leccion 140: Crear Payments Service e integrar resiliencia ante fallos externos",
+    href: "/daily/140",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
