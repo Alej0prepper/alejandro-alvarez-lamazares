@@ -452,6 +452,11 @@ const plannedLessons = [
     title: "Leccion 138: Extraer Orders Service y construir el nucleo del proceso de compra",
     href: "/daily/138",
   },
+  {
+    date: "2026-07-24",
+    title: "Leccion 139: Crear Inventory Service: gestionar stock y reservar unidades correctamente",
+    href: "/daily/139",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
