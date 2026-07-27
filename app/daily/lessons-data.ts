@@ -462,6 +462,11 @@ const plannedLessons = [
     title: "Leccion 140: Crear Payments Service e integrar resiliencia ante fallos externos",
     href: "/daily/140",
   },
+  {
+    date: "2026-07-27",
+    title: "Leccion 141: Integrar RabbitMQ y comunicar microservicios mediante eventos",
+    href: "/daily/141",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
