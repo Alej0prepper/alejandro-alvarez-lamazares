@@ -467,6 +467,11 @@ const plannedLessons = [
     title: "Leccion 141: Integrar RabbitMQ y comunicar microservicios mediante eventos",
     href: "/daily/141",
   },
+  {
+    date: "2026-07-28",
+    title: "Leccion 142: Implementar Transactional Outbox y evitar eventos perdidos",
+    href: "/daily/142",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
