@@ -472,6 +472,11 @@ const plannedLessons = [
     title: "Leccion 142: Implementar Transactional Outbox y evitar eventos perdidos",
     href: "/daily/142",
   },
+  {
+    date: "2026-07-29",
+    title: "Leccion 143: Implementar una Saga para coordinar la compra y sus compensaciones",
+    href: "/daily/143",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
