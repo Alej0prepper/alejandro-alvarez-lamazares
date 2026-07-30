@@ -477,6 +477,11 @@ const plannedLessons = [
     title: "Leccion 143: Implementar una Saga para coordinar la compra y sus compensaciones",
     href: "/daily/143",
   },
+  {
+    date: "2026-07-30",
+    title: "Leccion 144: Observabilidad distribuida con OpenTelemetry, Logs, Metricas y Trazas",
+    href: "/daily/144",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
