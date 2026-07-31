@@ -482,6 +482,11 @@ const plannedLessons = [
     title: "Leccion 144: Observabilidad distribuida con OpenTelemetry, Logs, Metricas y Trazas",
     href: "/daily/144",
   },
+  {
+    date: "2026-07-31",
+    title: "Leccion 145: Resiliencia avanzada: reintentos, Circuit Breaker, Timeouts y Bulkheads en microservicios",
+    href: "/daily/145",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
