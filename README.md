@@ -18,6 +18,10 @@ El objetivo es documentar conocimiento técnico en formato de clases diarias y n
 - CSS Modules
 - Node.js (scripts de scaffolding)
 
+## Dashboard Logística Comercial
+
+La ruta `/dashboard` procesa localmente un control logístico en formato `.xlsx` y genera una vista ejecutiva de vehículos, inventarios, consignaciones, cargas y calidad de datos. El archivo no se envía al servidor.
+
 ## Estructura del proyecto
 
 ```txt

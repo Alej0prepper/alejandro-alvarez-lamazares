@@ -188,6 +188,9 @@ export default async function ProfilePage() {
             <Link href="/atlas" className={styles.navLink}>
               Proyecto
             </Link>
+            <Link href="/dashboard" className={styles.navLink}>
+              Dashboard
+            </Link>
             <a href="#contacto" className={styles.navLink}>
               Contacto
             </a>
@@ -219,6 +222,9 @@ export default async function ProfilePage() {
               </Link>
               <Link href="/atlas" className={styles.button}>
                 Ver Proyecto
+              </Link>
+              <Link href="/dashboard" className={styles.button}>
+                Dashboard Logística
               </Link>
             </div>
             <div className={styles.socialRow} aria-label="Canales">

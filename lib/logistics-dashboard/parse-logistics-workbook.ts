@@ -1,0 +1,41 @@
+import readXlsxFile from "read-excel-file/universal";
+import type { MoneyBlock, QuantifiedCargo, SourceKind, SourceTrace, VehicleBlock, WorkbookParseResult } from "./types";
+
+const MAX_FILE_SIZE = 15 * 1024 * 1024;
+export function normalizeText(value: unknown): string { return value == null ? "" : String(value).normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, " ").trim().toLowerCase(); }
+export function parseLooseNumber(value: unknown): number | null {
+  if (typeof value === "number" && Number.isFinite(value)) return value;
+  const raw = String(value ?? "").replace(/[^\d.,\s-]/g, "").replace(/\s+/g, "").replace(/[.,-]+$/, "").trim();
+  if (!raw || !/\d/.test(raw)) return null;
+  const sign = raw.startsWith("-") ? -1 : 1; const unsigned = raw.replace(/-/g, "");
+  const separator = Math.max(unsigned.lastIndexOf("."), unsigned.lastIndexOf(","));
+  if (separator >= 0 && unsigned.slice(separator + 1).replace(/\D/g, "").length === 2) { const parsed = Number(`${unsigned.slice(0, separator).replace(/\D/g, "") || "0"}.${unsigned.slice(separator + 1).replace(/\D/g, "")}`); return Number.isFinite(parsed) ? sign * parsed : null; }
+  const parsed = Number(unsigned.replace(/\D/g, "")); return Number.isFinite(parsed) ? sign * parsed : null;
+}
+export function extractNumberAfterLabel(text: string, label: RegExp, endLabel?: RegExp): number | null { const match = text.match(label); if (!match || match.index == null) return null; let segment = text.slice(match.index + match[0].length); if (endLabel) { const end = segment.search(endLabel); if (end >= 0) segment = segment.slice(0, end); } return parseLooseNumber(segment.replace(/^\s*[-:]+\s*/, "")); }
+type IndexedCell = { rowIndex: number; columnIndex: number; text: string; normalized: string };
+const first = <T>(items: T[]): T | null => items[0] ?? null;
+function cells(rows: ReadonlyArray<ReadonlyArray<unknown>>): IndexedCell[] { return rows.flatMap((row, rowIndex) => row.map((value, columnIndex) => ({ rowIndex, columnIndex, text: String(value ?? "").trim(), normalized: normalizeText(value) })).filter((cell) => cell.text)); }
+function addTrace(traces: SourceTrace[], section: string, sourceText: string, result: string, kind: SourceKind) { traces.push({ section, sourceText, result, kind }); }
+function money(text: string, currency: "EUR" | "USD", section: string, traces: SourceTrace[], warnings: string[]): MoneyBlock {
+  const inventory = extractNumberAfterLabel(text, /inv(?:entario)?/i, /va/i); const va = extractNumberAfterLabel(text, /va/i, /(?:eur|usd|us)/i);
+  if (inventory == null || va == null) warnings.push(`No se encontraron los valores ${currency}.`);
+  if (inventory != null) addTrace(traces, section, text, `Inventario ${inventory} ${currency}`, "direct"); if (va != null) addTrace(traces, section, text, `VA ${va} ${currency}`, "direct");
+  return { inventory, va, currency, sourceText: text || null };
+}
+export function parseLogisticsRows(rows: ReadonlyArray<ReadonlyArray<unknown>>, options: { fileName: string; sheetName: string }): WorkbookParseResult {
+  const indexed = cells(rows); if (!indexed.length) return { ok: false, error: "No se encontró contenido en el informe." };
+  const all = indexed.map((c) => c.text).join(" | "); const normalized = normalizeText(all); const warnings: string[] = []; const traces: SourceTrace[] = [];
+  if (!normalized.includes("logistic") || !normalized.includes("nwi")) return { ok: false, error: "El archivo no parece corresponder a un control de logística comercial." };
+  const titleCell = first(indexed.filter((c) => c.normalized.includes("control") && c.normalized.includes("logistic") && c.normalized.includes("nwi"))); const reportTitle = titleCell?.text ?? "Control logística comercial interna NWI"; const reportDate = reportTitle.match(/\b\d{1,2}[./-]\d{1,2}[./-]\d{4}\b/)?.[0]?.replace(/[/-]/g, ".") ?? null; if (!reportDate) warnings.push("No se encontró fecha.");
+  const inBondText = first(indexed.filter((c) => c.normalized.includes("deposit") && c.normalized.includes("factur")))?.text ?? ""; const deposited = parseLooseNumber(inBondText.match(/(\d[\d.,\s]*)\s*(?:carros|autos)/i)?.[1]); const invoiced = parseLooseNumber(inBondText.match(/(\d[\d.,\s]*)\s*factur/i)?.[1]); if (deposited == null) warnings.push("No se encontró la cantidad de autos NWI."); if (invoiced == null) warnings.push("No se encontró la cantidad facturada.");
+  const pendingInvoice = deposited != null && invoiced != null ? deposited - invoiced : null; const inBondVehicles: VehicleBlock = { location: "NWI–ZELCOMSA", deposited, invoiced, pendingInvoice, pendingInvoiceSource: pendingInvoice == null ? "missing" : "calculated", sourceText: inBondText || null }; if (inBondText) { addTrace(traces, "Depósito In Bond", inBondText, `${deposited ?? "Ausente"} depositados / ${invoiced ?? "Ausente"} facturados`, "direct"); if (pendingInvoice != null) addTrace(traces, "Depósito In Bond", inBondText, `${pendingInvoice} pendientes de facturar`, "calculated"); }
+  const nwiText = first(indexed.filter((c) => c.normalized.includes("inv") && c.normalized.includes("va") && c.normalized.includes("eur")))?.text ?? ""; const nwiValues = money(nwiText, "EUR", "PPA–Insumos", traces, warnings);
+  const humsText = first(indexed.filter((c) => c.normalized.includes("inv") && c.normalized.includes("va") && (c.normalized.includes("usd") || c.normalized.includes("us"))))?.text ?? ""; const humsValues = money(humsText, "USD", "HUMS–CIMEX", traces, warnings); const humsCell = first(indexed.filter((c) => c.normalized.includes("autos") && c.normalized.includes("deposit"))); const humsDeposited = humsCell ? parseLooseNumber(humsCell.text.match(/(\d[\d.,\s]*)\s*autos/i)?.[1]) : null;
+  const palcoRow = indexed.find((c) => c.normalized.includes("consignacion tiendas palco"))?.rowIndex; const palcoLocations = palcoRow == null ? [] : (rows[palcoRow + 1] ?? []).map((x) => String(x ?? "").trim().replace(/[.]$/, "")).filter((x) => x && parseLooseNumber(x) == null); if (!palcoLocations.length) warnings.push("No se encontraron cantidades para las ubicaciones PALCO.");
+  const cargoGroups = ["Carilog–Comerciales", "comerciales–Aero Varadero", "Operativas–clientes", "Menajes"].filter((x) => normalized.includes(normalizeText(x))); const cargoStatuses = ["Producción", "Embarcadas", "Proceso de embarque"].filter((x) => normalized.includes(normalizeText(x))); const quantifiedCargo: QuantifiedCargo[] = [];
+  for (const cell of indexed) { const match = cell.text.match(/(\d[\d.,\s]*)\s+(pallets?|unidades?|contenedores?)\s+(.+)/i); if (match) quantifiedCargo.push({ quantity: parseLooseNumber(match[1]) ?? 0, unit: match[2], description: match[3].replace(/[.]$/, ""), location: null, sourceText: cell.text }); }
+  const provinces = ["Habana", "Villa Clara", "Santiago de Cuba"].filter((x) => normalized.includes(normalizeText(x))); const mentionedEntities = ["NWI", "ZELCOMSA", "HUMS", "CIMEX", "PALCO", "Carilog", "Aero Varadero"].filter((x) => normalized.includes(normalizeText(x))); const consignmentVehicles: VehicleBlock = { location: "HUMS–CIMEX", deposited: humsDeposited, invoiced: null, pendingInvoice: null, pendingInvoiceSource: "missing", sourceText: humsText || null };
+  return { ok: true, data: { fileName: options.fileName, sheetName: options.sheetName, reportTitle, reportDate, inBondVehicles, consignmentVehicles, nwiValues, humsValues, palcoLocations, provinces, cargoGroups, cargoStatuses, quantifiedCargo, mentionedEntities, warnings, traces } };
+}
+export async function parseLogisticsWorkbook(file: File): Promise<WorkbookParseResult> { if (!file.name.toLowerCase().endsWith(".xlsx")) return { ok: false, error: "Selecciona un archivo .xlsx." }; if (file.size > MAX_FILE_SIZE) return { ok: false, error: "El archivo supera el límite de 15 MB." }; try { const sheets = await readXlsxFile(file); if (!sheets.length) return { ok: false, error: "El libro no contiene hojas." }; const preferred = sheets.find((sheet) => normalizeText(sheet.sheet).includes("logistic")) ?? sheets[0]; if (!preferred.data.length) return { ok: false, error: "No se encontró contenido en el informe." }; return parseLogisticsRows(preferred.data, { fileName: file.name, sheetName: preferred.sheet }); } catch { return { ok: false, error: "No fue posible procesar el Excel. Comprueba que el archivo no esté dañado." }; } }
