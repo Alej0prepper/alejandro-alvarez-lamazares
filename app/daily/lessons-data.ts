@@ -487,6 +487,11 @@ const plannedLessons = [
     title: "Leccion 145: Resiliencia avanzada: reintentos, Circuit Breaker, Timeouts y Bulkheads en microservicios",
     href: "/daily/145",
   },
+  {
+    date: "2026-08-01",
+    title: "Leccion 146: Diseno para produccion: Configuracion por ambientes, secretos y Feature Flags",
+    href: "/daily/146",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
