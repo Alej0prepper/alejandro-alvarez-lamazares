@@ -497,6 +497,11 @@ const plannedLessons = [
     title: "Leccion 147: AWS desde cero para desarrolladores backend",
     href: "/daily/147",
   },
+  {
+    date: "2026-08-03",
+    title: "Leccion 148: Desplegar una API .NET en AWS",
+    href: "/daily/148",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
