@@ -492,6 +492,11 @@ const plannedLessons = [
     title: "Leccion 146: Diseno para produccion: Configuracion por ambientes, secretos y Feature Flags",
     href: "/daily/146",
   },
+  {
+    date: "2026-08-02",
+    title: "Leccion 147: AWS desde cero para desarrolladores backend",
+    href: "/daily/147",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
