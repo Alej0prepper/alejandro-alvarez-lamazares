@@ -498,7 +498,7 @@ const plannedLessons = [
     href: "/daily/147",
   },
   {
-    date: "2026-08-03",
+    date: "2026-08-10",
     title: "Leccion 148: Desplegar una API .NET en AWS",
     href: "/daily/148",
   },
