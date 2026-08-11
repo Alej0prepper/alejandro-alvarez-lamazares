@@ -504,8 +504,8 @@ const plannedLessons = [
   },
   {
     date: "2026-08-11",
-    title: "Leccion 150: AWS local con Floci: practicar cloud sin gastar dinero",
-    href: "/daily/150",
+    title: "Leccion 149: AWS local con Floci: practicar cloud sin gastar dinero",
+    href: "/daily/149",
   },
   {
     date: "2026-08-12",
