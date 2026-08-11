@@ -502,6 +502,16 @@ const plannedLessons = [
     title: "Leccion 148: Desplegar una API .NET en AWS",
     href: "/daily/148",
   },
+  {
+    date: "2026-08-11",
+    title: "Leccion 150: AWS local con Floci: practicar cloud sin gastar dinero",
+    href: "/daily/150",
+  },
+  {
+    date: "2026-08-12",
+    title: "Leccion 151: Diseñar una estrategia de testing real",
+    href: "/daily/151",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
