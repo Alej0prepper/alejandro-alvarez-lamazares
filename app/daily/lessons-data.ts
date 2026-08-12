@@ -509,7 +509,7 @@ const plannedLessons = [
   },
   {
     date: "2026-08-12",
-    title: "Leccion 151: Diseñar una estrategia de testing real",
+    title: "Leccion 151: Montar Floci desde cero y dejar AWS local funcionando",
     href: "/daily/151",
   },
 ];
