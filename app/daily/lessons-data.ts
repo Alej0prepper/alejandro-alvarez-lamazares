@@ -512,6 +512,11 @@ const plannedLessons = [
     title: "Leccion 151: Montar Floci desde cero y dejar AWS local funcionando",
     href: "/daily/151",
   },
+  {
+    date: "2026-08-13",
+    title: "Leccion 152: Diseñar una estrategia de testing real",
+    href: "/daily/152",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
