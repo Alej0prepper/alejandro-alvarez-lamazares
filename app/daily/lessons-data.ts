@@ -517,6 +517,11 @@ const plannedLessons = [
     title: "Leccion 152: Diseñar una estrategia de testing real",
     href: "/daily/152",
   },
+  {
+    date: "2026-08-14",
+    title: "Leccion 153: Integration Testing con infraestructura real: Testcontainers, PostgreSQL, RabbitMQ y WebApplicationFactory",
+    href: "/daily/153",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
