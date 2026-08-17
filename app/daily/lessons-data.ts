@@ -522,6 +522,11 @@ const plannedLessons = [
     title: "Leccion 153: Integration Testing con infraestructura real: Testcontainers, PostgreSQL, RabbitMQ y WebApplicationFactory",
     href: "/daily/153",
   },
+  {
+    date: "2026-08-17",
+    title: "Leccion 154: Contract Testing entre microservicios",
+    href: "/daily/154",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
