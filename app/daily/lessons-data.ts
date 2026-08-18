@@ -527,6 +527,11 @@ const plannedLessons = [
     title: "Leccion 154: Contract Testing entre microservicios",
     href: "/daily/154",
   },
+  {
+    date: "2026-08-18",
+    title: "Leccion 155: Pruebas de carga, estrés, spike y resistencia",
+    href: "/daily/155",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
