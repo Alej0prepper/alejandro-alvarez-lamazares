@@ -532,6 +532,11 @@ const plannedLessons = [
     title: "Leccion 155: Pruebas de carga, estrés, spike y resistencia",
     href: "/daily/155",
   },
+  {
+    date: "2026-08-19",
+    title: "Leccion 156: Odoo 17 desde la perspectiva de un desarrollador backend",
+    href: "/daily/156",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
