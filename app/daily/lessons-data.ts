@@ -537,6 +537,11 @@ const plannedLessons = [
     title: "Leccion 156: Odoo 17 desde la perspectiva de un desarrollador backend",
     href: "/daily/156",
   },
+  {
+    date: "2026-08-20",
+    title: "Leccion 157: Arquitectura de Odoo 17 y donde vive TradeOps 360",
+    href: "/daily/157",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
