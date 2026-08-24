@@ -547,6 +547,11 @@ const plannedLessons = [
     title: "Leccion 158: Preparar un entorno profesional de desarrollo Odoo 17 para TradeOps 360",
     href: "/daily/158",
   },
+  {
+    date: "2026-08-24",
+    title: "Leccion 159: Anatomia de un modulo Odoo: crear trade_core y trade_import",
+    href: "/daily/159",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
