@@ -552,6 +552,11 @@ const plannedLessons = [
     title: "Leccion 159: Anatomia de un modulo Odoo: crear trade_core y trade_import",
     href: "/daily/159",
   },
+  {
+    date: "2026-08-25",
+    title: "Leccion 160: ORM, modelos, Fields y Recordsets: creando nuestra primera importacion",
+    href: "/daily/160",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
