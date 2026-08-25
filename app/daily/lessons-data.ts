@@ -557,6 +557,11 @@ const plannedLessons = [
     title: "Leccion 160: ORM, modelos, Fields y Recordsets: creando nuestra primera importacion",
     href: "/daily/160",
   },
+  {
+    date: "2026-08-25",
+    title: "Leccion 161: Relaciones, Domains y datos configurables en TradeOps 360",
+    href: "/daily/161",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
