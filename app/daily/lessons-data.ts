@@ -562,6 +562,11 @@ const plannedLessons = [
     title: "Leccion 161: Relaciones, Domains y datos configurables en TradeOps 360",
     href: "/daily/161",
   },
+  {
+    date: "2026-08-26",
+    title: "Leccion 162: Computed Fields, Constraints y reglas de negocio en Importaciones",
+    href: "/daily/162",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
