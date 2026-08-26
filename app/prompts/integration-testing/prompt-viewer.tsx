@@ -27,6 +27,6 @@ export default function PromptViewer() {
     <header className={styles.header}><div><Link href="/prompts" className={styles.back}>← Prompts</Link><p className={styles.eyebrow}>Reusable prompt</p><h1>Revisar cambios y mantener los tests</h1></div><button type="button" className={styles.copy} onClick={copyPrompt}>{copied ? "Copiado" : "Copiar prompt"}</button></header>
     <p className={styles.description}>Prompt operativo para analizar cambios, diseñar cobertura y ejecutar las suites correctas en un repositorio ASP.NET Core.</p>
     <pre className={styles.content}>{prompt}</pre>
-    <footer><Link href="/profile" className={styles.back}>Volver al perfil</Link></footer>
+    <footer className={styles.footer}><Link href="/profile" className={styles.back}>Volver al perfil</Link></footer>
   </article></main>;
 }
