@@ -558,7 +558,7 @@ const plannedLessons = [
     href: "/daily/160",
   },
   {
-    date: "2026-08-25",
+    date: "2026-08-26",
     title: "Leccion 161: Relaciones, Domains y datos configurables en TradeOps 360",
     href: "/daily/161",
   },
