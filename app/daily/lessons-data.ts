@@ -567,6 +567,11 @@ const plannedLessons = [
     title: "Leccion 162: Computed Fields, Constraints y reglas de negocio en Importaciones",
     href: "/daily/162",
   },
+  {
+    date: "2026-08-28",
+    title: "Leccion 163: Workflow de Importaciones: estados y transiciones validas",
+    href: "/daily/163",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
