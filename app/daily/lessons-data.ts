@@ -563,7 +563,7 @@ const plannedLessons = [
     href: "/daily/161",
   },
   {
-    date: "2026-08-26",
+    date: "2026-08-27",
     title: "Leccion 162: Computed Fields, Constraints y reglas de negocio en Importaciones",
     href: "/daily/162",
   },
@@ -571,6 +571,11 @@ const plannedLessons = [
     date: "2026-08-28",
     title: "Leccion 163: Workflow de Importaciones: estados y transiciones validas",
     href: "/daily/163",
+  },
+  {
+    date: "2026-08-31",
+    title: "Leccion 164: Gastos de importacion y prorrateo del costo real",
+    href: "/daily/164",
   },
 ];
 
