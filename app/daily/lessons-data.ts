@@ -577,6 +577,11 @@ const plannedLessons = [
     title: "Leccion 164: Gastos de importacion y prorrateo del costo real",
     href: "/daily/164",
   },
+  {
+    date: "2026-08-31",
+    title: "Leccion 165: Resumen de lo que hemos visto hasta ahora",
+    href: "/daily/165",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
