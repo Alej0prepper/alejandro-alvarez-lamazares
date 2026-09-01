@@ -582,6 +582,11 @@ const plannedLessons = [
     title: "Leccion 165: Resumen de lo que hemos visto hasta ahora",
     href: "/daily/165",
   },
+  {
+    date: "2026-09-02",
+    title: "Leccion 166: _inherit, Views, XPath, Actions y Menus: empezar a extender Odoo",
+    href: "/daily/166",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
