@@ -578,7 +578,7 @@ const plannedLessons = [
     href: "/daily/164",
   },
   {
-    date: "2026-08-31",
+    date: "2026-09-01",
     title: "Leccion 165: Resumen de lo que hemos visto hasta ahora",
     href: "/daily/165",
   },
