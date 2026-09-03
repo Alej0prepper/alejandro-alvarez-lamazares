@@ -592,6 +592,11 @@ const plannedLessons = [
     title: "Leccion 168: Preventas vinculadas a Importaciones",
     href: "/daily/168",
   },
+  {
+    date: "2026-09-04",
+    title: "Leccion 169: Sobrepreventa, pagos y estados derivados",
+    href: "/daily/169",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
