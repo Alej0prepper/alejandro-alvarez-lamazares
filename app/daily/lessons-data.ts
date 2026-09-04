@@ -597,6 +597,11 @@ const plannedLessons = [
     title: "Leccion 169: Sobrepreventa, pagos y estados derivados",
     href: "/daily/169",
   },
+  {
+    date: "2026-09-05",
+    title: "Leccion 170: Convertir una Preventa en sale.order estandar de Odoo",
+    href: "/daily/170",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
