@@ -598,7 +598,7 @@ const plannedLessons = [
     href: "/daily/169",
   },
   {
-    date: "2026-09-05",
+    date: "2026-09-07",
     title: "Leccion 170: Convertir una Preventa en sale.order estandar de Odoo",
     href: "/daily/170",
   },
