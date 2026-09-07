@@ -602,6 +602,11 @@ const plannedLessons = [
     title: "Leccion 170: Convertir una Preventa en sale.order estandar de Odoo",
     href: "/daily/170",
   },
+  {
+    date: "2026-09-08",
+    title: "Leccion 171: Distribucion, choferes y workflow logistico",
+    href: "/daily/171",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
