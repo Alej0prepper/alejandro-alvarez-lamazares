@@ -607,6 +607,11 @@ const plannedLessons = [
     title: "Leccion 171: Distribucion, choferes y workflow logistico",
     href: "/daily/171",
   },
+  {
+    date: "2026-09-09",
+    title: "Leccion 172: Entregas parciales, incidencias y Wizards en Odoo 17",
+    href: "/daily/172",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
