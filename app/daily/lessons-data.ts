@@ -612,6 +612,11 @@ const plannedLessons = [
     title: "Leccion 172: Entregas parciales, incidencias y Wizards en Odoo 17",
     href: "/daily/172",
   },
+  {
+    date: "2026-09-10",
+    title: "Leccion 173: Conciliaciones, transacciones y concurrencia en Odoo 17",
+    href: "/daily/173",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
