@@ -9,6 +9,11 @@ export default function PromptsPage() {
         <Link href="/profile" className={styles.backLink}>Volver al perfil</Link>
       </header>
       <div className={styles.list}>
+        <Link href="/prompts/implement-class" className={styles.promptCard}>
+          <span className={styles.icon} aria-hidden="true">{"<>"}</span>
+          <span><strong>Implementar una clase práctica</strong><small>Analiza la lección y el repositorio, implementa el alcance incremental y verifica el resultado con evidencia.</small></span>
+          <span className={styles.arrow} aria-hidden="true">→</span>
+        </Link>
         <Link href="/prompts/integration-testing" className={styles.promptCard}>
           <span className={styles.icon} aria-hidden="true">{"{}"}</span>
           <span><strong>Revisar cambios y mantener los tests</strong><small>Analisis de impacto, cobertura, integracion, ejecucion y trazabilidad para common-store-admin.</small></span>
