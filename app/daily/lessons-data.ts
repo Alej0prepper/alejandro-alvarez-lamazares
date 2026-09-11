@@ -617,6 +617,11 @@ const plannedLessons = [
     title: "Leccion 173: Conciliaciones, transacciones y concurrencia en Odoo 17",
     href: "/daily/173",
   },
+  {
+    date: "2026-09-11",
+    title: "Leccion 174: Integraciones, notificaciones, auditoria y reportes en Odoo 17",
+    href: "/daily/174",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
