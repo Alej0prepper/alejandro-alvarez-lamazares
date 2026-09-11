@@ -622,6 +622,11 @@ const plannedLessons = [
     title: "Leccion 174: Integraciones, notificaciones, auditoria y reportes en Odoo 17",
     href: "/daily/174",
   },
+  {
+    date: "2026-09-14",
+    title: "Leccion 175: Testing, debugging, performance, despliegue y cierre de TradeOps 360 v1.0",
+    href: "/daily/175",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
