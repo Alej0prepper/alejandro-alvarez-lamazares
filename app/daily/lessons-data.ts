@@ -627,6 +627,11 @@ const plannedLessons = [
     title: "Leccion 175: Testing, debugging, performance, despliegue y cierre de TradeOps 360 v1.0",
     href: "/daily/175",
   },
+  {
+    date: "2026-09-15",
+    title: "Leccion 176: Como llega una peticion desde Internet hasta tu aplicacion",
+    href: "/daily/176",
+  },
 ];
 
 export async function getDailyLessons(): Promise<LessonCard[]> {
