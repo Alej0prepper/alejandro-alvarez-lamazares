@@ -623,6 +623,11 @@ const plannedLessons = [
     href: "/daily/177",
   },
   {
+    date: "2026-09-25",
+    title: "Leccion 178: Puertos, interfaces y exposicion: 127.0.0.1 vs 0.0.0.0",
+    href: "/daily/178",
+  },
+  {
     date: "2026-09-11",
     title: "Leccion 174: Integraciones, notificaciones, auditoria y reportes en Odoo 17",
     href: "/daily/174",
