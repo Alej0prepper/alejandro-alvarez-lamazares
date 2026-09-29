@@ -2,7 +2,7 @@
 
 Índice consolidado de las clases disponibles en `app/daily`. Los títulos se obtienen de los metadatos de cada página.
 
-Hay 170 clases publicadas. No existen carpetas para los días 1–3, 150, 163 ni 167; la clase 4 no tiene un tema específico en sus metadatos.
+Hay 173 clases publicadas. No existen carpetas para los días 1–3, 150, 163 ni 167; la clase 4 no tiene un tema específico en sus metadatos.
 
 - [Clase 4: Sin título especificado](/daily/4)
 - [Clase 5: Idempotencia](/daily/5)
@@ -174,3 +174,8 @@ Hay 170 clases publicadas. No existen carpetas para los días 1–3, 150, 163 ni
 - [Clase 174: Integraciones y auditoria](/daily/174)
 - [Clase 175: Cierre TradeOps 360](/daily/175)
 - [Clase 176: Como llega una peticion desde Internet hasta tu aplicacion](/daily/176)
+- [Clase 177: Reverse Proxy](/daily/177)
+- [Clase 178: Puertos e interfaces](/daily/178)
+- [Clase 179: Persistencia en Docker](/daily/179)
+
+- [Clase 180: Backups PostgreSQL: que hace realmente pg_dump](/daily/180)

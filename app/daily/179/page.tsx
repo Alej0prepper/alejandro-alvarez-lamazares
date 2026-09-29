@@ -1,0 +1,1 @@
+import type { Metadata } from "next"; import Daily179Client from "./daily179-client"; export const metadata: Metadata = { title: "Daily Backend - Dia 179 (Persistencia en Docker)", description: "Separar el ciclo de vida del contenedor, los volumenes Docker y los datos de PostgreSQL." }; export default function Daily179Page() { return <Daily179Client />; }

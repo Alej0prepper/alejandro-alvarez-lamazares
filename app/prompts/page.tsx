@@ -14,6 +14,11 @@ export default function PromptsPage() {
           <span><strong>Implementar una clase práctica</strong><small>Analiza la lección y el repositorio, implementa el alcance incremental y verifica el resultado con evidencia.</small></span>
           <span className={styles.arrow} aria-hidden="true">→</span>
         </Link>
+        <Link href="/prompts/add-daily-class" className={styles.promptCard}>
+          <span className={styles.icon} aria-hidden="true">{"+1"}</span>
+          <span><strong>Añadir una clase diaria</strong><small>Crea la siguiente lección del curso, actualiza sus registros y comprueba la navegación y la calidad editorial.</small></span>
+          <span className={styles.arrow} aria-hidden="true">→</span>
+        </Link>
         <Link href="/prompts/integration-testing" className={styles.promptCard}>
           <span className={styles.icon} aria-hidden="true">{"{}"}</span>
           <span><strong>Revisar cambios y mantener los tests</strong><small>Analisis de impacto, cobertura, integracion, ejecucion y trazabilidad para common-store-admin.</small></span>

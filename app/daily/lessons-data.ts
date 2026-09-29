@@ -628,6 +628,16 @@ const plannedLessons = [
     href: "/daily/178",
   },
   {
+    date: "2026-09-26",
+    title: "Leccion 179: Persistencia en Docker: que ocurre con tus datos cuando desaparece un contenedor",
+    href: "/daily/179",
+  },
+  {
+    date: "2026-09-29",
+    title: "Leccion 180: Backups PostgreSQL: que hace realmente pg_dump",
+    href: "/daily/180",
+  },
+  {
     date: "2026-09-11",
     title: "Leccion 174: Integraciones, notificaciones, auditoria y reportes en Odoo 17",
     href: "/daily/174",
