@@ -638,6 +638,11 @@ const plannedLessons = [
     href: "/daily/180",
   },
   {
+    date: "2026-09-30",
+    title: "Leccion 181: Restaurar una base no es ejecutar un .sql y esperar",
+    href: "/daily/181",
+  },
+  {
     date: "2026-09-11",
     title: "Leccion 174: Integraciones, notificaciones, auditoria y reportes en Odoo 17",
     href: "/daily/174",

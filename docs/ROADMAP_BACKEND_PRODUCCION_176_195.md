@@ -2,7 +2,7 @@
 
 ## Estado
 
-Plan de las proximas clases diarias. El dia 176 ya esta publicado; los dias 177–195 permanecen planificados. Cuando se implemente una clase, se creara su ruta `app/daily/<dia>/`, se incorporara al calendario siguiendo la convencion existente y se actualizara el indice de clases publicadas.
+Plan de las proximas clases diarias. Los dias 176–181 ya estan publicados; los dias 182–195 permanecen planificados. Cuando se implemente una clase, se creara su ruta `app/daily/<dia>/`, se incorporara al calendario siguiendo la convencion existente y se actualizara el indice de clases publicadas.
 
 ## Proposito del bloque
 
@@ -21,11 +21,11 @@ Nunca se deben publicar IPs, dominios, usuarios, credenciales, backups, configur
 | Dia | Clase | Caso y resultado de aprendizaje |
 | ---: | --- | --- |
 | 176 | Como llega una peticion desde Internet hasta tu aplicacion **(publicada)** | Seguir una peticion desde Internet hasta una aplicacion backend y sus dependencias. |
-| 177 | Reverse proxy: por que una aplicacion no deberia exponerse directamente | Entender `proxy_pass`, TLS, cabeceras y diagnosticar un 502 sin adivinar. |
-| 178 | Puertos, interfaces y exposicion: `127.0.0.1` vs `0.0.0.0` | Distinguir binding, loopback, publicacion de Docker y superficie expuesta. |
-| 179 | Persistencia en Docker: que ocurre con los datos cuando muere un contenedor | Separar ciclo de vida del contenedor, volumen y datos de PostgreSQL. |
-| 180 | Backups PostgreSQL: que hace realmente `pg_dump` | Explicar origen, formato, destino y limites de un dump verificable. |
-| 181 | Restaurar una base no es ejecutar un archivo y esperar | Diseñar una restauracion aislada, controlada y validada. |
+| 177 | Reverse proxy: por que una aplicacion no deberia exponerse directamente **(publicada)** | Entender `proxy_pass`, TLS, cabeceras y diagnosticar un 502 sin adivinar. |
+| 178 | Puertos, interfaces y exposicion: `127.0.0.1` vs `0.0.0.0` **(publicada)** | Distinguir binding, loopback, publicacion de Docker y superficie expuesta. |
+| 179 | Persistencia en Docker: que ocurre con los datos cuando muere un contenedor **(publicada)** | Separar ciclo de vida del contenedor, volumen y datos de PostgreSQL. |
+| 180 | Backups PostgreSQL: que hace realmente `pg_dump` **(publicada)** | Explicar origen, formato, destino y limites de un dump verificable. |
+| 181 | Restaurar una base no es ejecutar un archivo y esperar **(publicada)** | Diseñar una restauracion aislada, controlada y validada. |
 | 182 | `pg_dump`, `psql`, formatos de backup y compatibilidad de versiones | Elegir herramienta y formato segun motor, version y objetivo de recuperacion. |
 | 183 | Fail Fast vs Best Effort en una restauracion | Decidir cuando detener, registrar errores y declarar un restore no confiable. |
 | 184 | Migraciones de software: codigo compatible no equivale a datos compatibles | Analizar incompatibilidades de modulos y datos entre versiones de Odoo. |

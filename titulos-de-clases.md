@@ -2,7 +2,7 @@
 
 Índice consolidado de las clases disponibles en `app/daily`. Los títulos se obtienen de los metadatos de cada página.
 
-Hay 173 clases publicadas. No existen carpetas para los días 1–3, 150, 163 ni 167; la clase 4 no tiene un tema específico en sus metadatos.
+Hay 175 clases publicadas. No existen carpetas para los días 1–3, 150, 163 ni 167; la clase 4 no tiene un tema específico en sus metadatos.
 
 - [Clase 4: Sin título especificado](/daily/4)
 - [Clase 5: Idempotencia](/daily/5)
@@ -179,3 +179,4 @@ Hay 173 clases publicadas. No existen carpetas para los días 1–3, 150, 163 ni
 - [Clase 179: Persistencia en Docker](/daily/179)
 
 - [Clase 180: Backups PostgreSQL: que hace realmente pg_dump](/daily/180)
+- [Clase 181: Restaurar una base no es ejecutar un .sql y esperar](/daily/181)
