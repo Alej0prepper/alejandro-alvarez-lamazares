@@ -2,7 +2,7 @@
 
 ## Estado
 
-Plan de las proximas clases diarias. Los dias 176–181 ya estan publicados; los dias 182–195 permanecen planificados. Cuando se implemente una clase, se creara su ruta `app/daily/<dia>/`, se incorporara al calendario siguiendo la convencion existente y se actualizara el indice de clases publicadas.
+Plan de las proximas clases diarias. Los dias 176–183 ya estan publicados; los dias 184–195 permanecen planificados. Cuando se implemente una clase, se creara su ruta `app/daily/<dia>/`, se incorporara al calendario siguiendo la convencion existente y se actualizara el indice de clases publicadas.
 
 ## Proposito del bloque
 
@@ -26,8 +26,8 @@ Nunca se deben publicar IPs, dominios, usuarios, credenciales, backups, configur
 | 179 | Persistencia en Docker: que ocurre con los datos cuando muere un contenedor **(publicada)** | Separar ciclo de vida del contenedor, volumen y datos de PostgreSQL. |
 | 180 | Backups PostgreSQL: que hace realmente `pg_dump` **(publicada)** | Explicar origen, formato, destino y limites de un dump verificable. |
 | 181 | Restaurar una base no es ejecutar un archivo y esperar **(publicada)** | Diseñar una restauracion aislada, controlada y validada. |
-| 182 | `pg_dump`, `psql`, formatos de backup y compatibilidad de versiones | Elegir herramienta y formato segun motor, version y objetivo de recuperacion. |
-| 183 | Fail Fast vs Best Effort en una restauracion | Decidir cuando detener, registrar errores y declarar un restore no confiable. |
+| 182 | Formatos de backup y compatibilidad de PostgreSQL **(publicada)** | Elegir herramienta y formato segun motor, version y objetivo de recuperacion. |
+| 183 | Fail Fast vs Best Effort: cuando detenerse ante un error **(publicada)** | Decidir segun dependencia y consistencia, registrar resultados parciales y no aprobar un restore incompleto. |
 | 184 | Migraciones de software: codigo compatible no equivale a datos compatibles | Analizar incompatibilidades de modulos y datos entre versiones de Odoo. |
 | 185 | Gestion de dependencias: aplicacion, Python y sistema | Auditar addons y dependencias sin instalar paquetes a ciegas. |
 | 186 | Como auditar un sistema que no desarrollaste | Reconstruir alcance, riesgos y limites con acceso de solo observacion. |

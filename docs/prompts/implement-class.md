@@ -8,7 +8,7 @@ Convertir los conceptos y requisitos de la clase en una implementación real, co
 
 El proyecto se construye incrementalmente: cada clase añade o mejora una parte del mismo sistema. Implementa lo correspondiente a esta clase, sin adelantar funcionalidades de clases futuras.
 
-## 1. Revisa la clase y el repositorio antes de modificar archivos
+## 1. Revisa la clase  y el repositorio antes de modificar archivos
 
 Lee la clase completa e identifica:
 

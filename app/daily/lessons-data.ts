@@ -643,6 +643,16 @@ const plannedLessons = [
     href: "/daily/181",
   },
   {
+    date: "2026-10-02",
+    title: "Leccion 182: Formatos de backup y compatibilidad de PostgreSQL",
+    href: "/daily/182",
+  },
+  {
+    date: "2026-10-05",
+    title: "Leccion 183: Fail Fast vs Best Effort: cuándo detenerse ante un error",
+    href: "/daily/183",
+  },
+  {
     date: "2026-09-11",
     title: "Leccion 174: Integraciones, notificaciones, auditoria y reportes en Odoo 17",
     href: "/daily/174",
