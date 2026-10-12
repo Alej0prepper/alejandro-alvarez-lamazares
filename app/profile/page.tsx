@@ -119,7 +119,7 @@ function getDisplayDate(rawDate?: string) {
 }
 
 function getDisplayDayLabel(lesson: Lesson) {
-  return `DAY ${lesson.dayNumber}`;
+  return lesson.dayNumber === 0 ? lesson.day : `DAY ${lesson.dayNumber}`;
 }
 
 function getDisplayCategory(lesson: Lesson) {

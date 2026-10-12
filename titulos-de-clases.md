@@ -182,3 +182,5 @@ Hay 177 clases publicadas. No existen carpetas para los días 1–3, 150, 163 ni
 - [Clase 181: Restaurar una base no es ejecutar un .sql y esperar](/daily/181)
 - [Clase 182: Formatos de backup y compatibilidad de PostgreSQL](/daily/182)
 - [Clase 183: Fail Fast vs Best Effort: cuándo detenerse ante un error](/daily/183)
+
+- [Clase complementaria: Construir una imagen fuera del servidor — Docker, GitHub Actions y GHCR](/daily/build-en-ci)
