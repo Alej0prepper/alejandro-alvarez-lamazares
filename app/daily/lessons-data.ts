@@ -723,7 +723,15 @@ export async function getDailyLessons(): Promise<LessonCard[]> {
   const availableTitles = new Set(availableLessons.map((lesson) => lesson.title));
   const futureLessons = plannedLessons.filter((lesson) => !availableTitles.has(lesson.title)).map(enrichLesson);
 
-  return [...availableLessons, ...futureLessons].sort((a, b) => a.date.localeCompare(b.date));
+  const complementaryLessons: LessonCard[] = [{
+    date: "2026-10-12",
+    day: "Clase complementaria",
+    dayNumber: 0,
+    title: "Docker: construir una imagen fuera del servidor con GitHub Actions y GHCR",
+    href: "/daily/build-en-ci",
+  }];
+
+  return [...availableLessons, ...futureLessons, ...complementaryLessons].sort((a, b) => a.date.localeCompare(b.date));
 }
 
 export async function getLatestPublishedLessons(limit = 5): Promise<LessonCard[]> {
