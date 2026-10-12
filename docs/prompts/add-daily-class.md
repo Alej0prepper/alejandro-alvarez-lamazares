@@ -16,4 +16,6 @@ Crea todos los archivos necesarios para que la nueva clase funcione en la ruta q
 
 Antes de terminar, revisa los cambios y ejecuta las comprobaciones pertinentes que ya ofrezca el proyecto, como lint, tests o build. Corrige los errores introducidos por la clase y reporta los archivos modificados, las comprobaciones ejecutadas y cualquier limitación encontrada.
 
+Cuando la clase esté terminada y las comprobaciones pertinentes hayan pasado, crea un commit con los archivos de la nueva clase y sus registros asociados. Este prompt autoriza expresamente ese commit. Usa exactamente el formato `feat: add lesson no <numero>`, sustituyendo `<numero>` por el número real de la clase; por ejemplo, `feat: add lesson no 184`. Incluye únicamente los cambios de esta tarea y conserva fuera del commit cualquier cambio ajeno. Reporta el hash y el mensaje del commit en la entrega final. No hagas push ni despliegues.
+
 Si después de este prompt incluyo condiciones adicionales, incorpóralas al trabajo siempre que sean compatibles con el propósito del curso y las convenciones del repositorio. Si no añado condiciones, completa la clase con las instrucciones anteriores sin pedirme que rellene campos.
