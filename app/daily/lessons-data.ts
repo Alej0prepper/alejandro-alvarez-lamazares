@@ -653,6 +653,11 @@ const plannedLessons = [
     href: "/daily/183",
   },
   {
+    date: "2026-10-12",
+    title: "Leccion 184: Migraciones de software: código compatible ≠ datos compatibles",
+    href: "/daily/184",
+  },
+  {
     date: "2026-09-11",
     title: "Leccion 174: Integraciones, notificaciones, auditoria y reportes en Odoo 17",
     href: "/daily/174",
