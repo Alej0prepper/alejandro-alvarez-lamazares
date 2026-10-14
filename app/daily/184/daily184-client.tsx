@@ -142,7 +142,7 @@ CONTRACT -> retirar lo antiguo tras verificar consumidores`
     subtitle: "Regla mental: código compatible ≠ datos compatibles.", chip: "Aprendizaje",
     paragraphs: [
       "Una migración válida lleva los datos existentes a reglas nuevas y conserva un camino operativo comprobado. Imagen construida, migración aplicada y sistema saludable son evidencias distintas.",
-      "Antes de aprobar, pregunta: ¿esta versión puede leer y escribir correctamente lo que ya existe?, ¿qué pasa con la anterior?, ¿cómo recuperaríamos un fallo? El siguiente tema, todavía planificado, es el día 185: dependencias de aplicación, Python y sistema."
+      "Antes de aprobar, pregunta: ¿esta versión puede leer y escribir correctamente lo que ya existe?, ¿qué pasa con la anterior?, ¿cómo recuperaríamos un fallo? Continúa en el día 185: dependencias de aplicación, Python y sistema."
     ]
   }
 ];
@@ -173,7 +173,7 @@ export default function Daily184Client() {
     <header className={styles.topbar}><div className={styles.topbarInner}>
       <div className={styles.brand}><div className={styles.logo} aria-hidden="true" /><div><h1>Daily Backend</h1><div className={styles.brandSub}>Migraciones · código, esquema y datos</div></div></div>
       <nav className={styles.nav} aria-label="Navegación"><Link className={styles.pill} href="/daily">Archivo</Link><Link className={styles.pill} href="/calendar">Calendario</Link></nav>
-      <div className={styles.actions}><Link className={styles.btn} href="/daily/183"><span className={styles.kbd}>←</span> Día 183</Link><Link className={`${styles.btn} ${styles.primary}`} href="#symptom">Empezar <span className={styles.kbd}>↓</span></Link></div>
+      <div className={styles.actions}><Link className={styles.btn} href="/daily/183"><span className={styles.kbd}>←</span> Día 183</Link><Link className={`${styles.btn} ${styles.primary}`} href="/daily/185">Día 185 <span className={styles.kbd}>→</span></Link></div>
     </div></header>
     <main className={styles.container}><div className={styles.grid}><article className={styles.card}><div className={styles.bd}>
       <div className={styles.dailyHero}><div className={styles.createdAt}>12/10/2026</div><div className={styles.badge}>Daily #184 • Production Backend</div><h2 className={styles.title}>Migraciones de software: código compatible ≠ datos compatibles</h2><div className={styles.meta} aria-label="Metadatos"><span className={`${styles.chip} ${styles.chipOk}`}>5 min</span><span className={styles.chip}>Nivel: intermedio</span><span className={`${styles.chip} ${styles.chipPro}`}>PostgreSQL</span><span className={styles.chip}>.NET</span><span className={styles.chip}>QA</span></div><p className={styles.lead}>Desplegar una nueva versión no garantiza que pueda trabajar con el esquema y los datos existentes. Diseña y comprueba esa transición.</p></div>
@@ -185,7 +185,7 @@ export default function Daily184Client() {
         {section.id === "challenge" && <details className={styles.proDetails}><summary>Ver respuesta razonada</summary><div className={styles.proBody}>SET NOT NULL falla porque los registros actuales violan la restricción. Primero acuerda la regla con el negocio, transforma los datos y afirma estados esperados y cero NULL; después impón la restricción. Si v1 sigue omitiendo status, sus INSERT fallarán: necesita una versión puente, un default con significado válido o una transición sin esos escritores. Comprueba históricos y nuevas escrituras antes de aprobar.</div></details>}
       </div></section>)}
       <div className={styles.relatedLinks}><a className={styles.pill} href="https://www.postgresql.org/docs/17/ddl-alter.html">Referencia: ALTER TABLE</a><a className={styles.pill} href="https://learn.microsoft.com/en-us/ef/core/managing-schemas/migrations/applying">Referencia: migraciones EF Core</a><a className={styles.pill} href="https://www.odoo.com/documentation/17.0/developer/reference/upgrades/upgrade_scripts.html">Referencia: upgrades Odoo 17</a><Link className={styles.pill} href="/daily/87">Día 87: migraciones en producción</Link><Link className={styles.pill} href="/daily/181">Día 181: validar recuperación</Link></div>
-      <div className={styles.footerNav}><Link className={styles.btn} href="/daily/183"><span className={styles.kbd}>←</span> Día 183</Link><Link className={styles.btn} href="/daily">Ver archivo</Link><Link className={styles.btn} href="/calendar">Ver calendario</Link></div>
+      <div className={styles.footerNav}><Link className={styles.btn} href="/daily/183"><span className={styles.kbd}>←</span> Día 183</Link><Link className={styles.btn} href="/daily">Ver archivo</Link><Link className={styles.btn} href="/calendar">Ver calendario</Link><Link className={styles.btn} href="/daily/185">Día 185 <span className={styles.kbd}>→</span></Link></div>
     </div></article></div></main>
   </div>;
 }

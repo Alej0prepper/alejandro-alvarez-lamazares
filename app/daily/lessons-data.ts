@@ -658,6 +658,11 @@ const plannedLessons = [
     href: "/daily/184",
   },
   {
+    date: "2026-10-14",
+    title: "Leccion 185: Dependency Management: tu aplicación depende de mucho más que tu código",
+    href: "/daily/185",
+  },
+  {
     date: "2026-09-11",
     title: "Leccion 174: Integraciones, notificaciones, auditoria y reportes en Odoo 17",
     href: "/daily/174",
