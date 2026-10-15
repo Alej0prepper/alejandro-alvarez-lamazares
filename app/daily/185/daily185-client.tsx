@@ -122,7 +122,7 @@ const sections: LessonSection[] = [
     "chip": "Aprendizaje",
     "paragraphs": [
       "Gestionar dependencias significa declararlas, conocer lo resuelto, controlar versiones y verificar las funciones que las necesitan. Una instalación exitosa es evidencia de preparación; una operación con resultado esperado es evidencia de funcionamiento.",
-      "El día 184 coordinó código, esquema y datos. Hoy añadimos runtime, librerías, plataforma y servicios a ese contrato. El siguiente tema, todavía planificado, es el día 186: cómo auditar un sistema que no desarrollaste."
+      "El día 184 coordinó código, esquema y datos. Hoy añadimos runtime, librerías, plataforma y servicios a ese contrato. Continúa en el día 186: cómo auditar un backend que no desarrollaste tú."
     ]
   }
 ];
@@ -153,7 +153,7 @@ export default function Daily185Client() {
     <header className={styles.topbar}><div className={styles.topbarInner}>
       <div className={styles.brand}><div className={styles.logo} aria-hidden="true" /><div><h1>Daily Backend</h1><div className={styles.brandSub}>Dependencias · runtime, paquetes y servicios</div></div></div>
       <nav className={styles.nav} aria-label="Navegación"><Link className={styles.pill} href="/daily">Archivo</Link><Link className={styles.pill} href="/calendar">Calendario</Link></nav>
-      <div className={styles.actions}><Link className={styles.btn} href="/daily/184"><span className={styles.kbd}>←</span> Día 184</Link><Link className={`${styles.btn} ${styles.primary}`} href="#symptom">Empezar <span className={styles.kbd}>↓</span></Link></div>
+      <div className={styles.actions}><Link className={styles.btn} href="/daily/184"><span className={styles.kbd}>←</span> Día 184</Link><Link className={`${styles.btn} ${styles.primary}`} href="/daily/186">Día 186 <span className={styles.kbd}>→</span></Link></div>
     </div></header>
     <main className={styles.container}><div className={styles.grid}><article className={styles.card}><div className={styles.bd}>
       <div className={styles.dailyHero}><div className={styles.createdAt}>14/10/2026</div><div className={styles.badge}>Daily #185 • Production Backend</div><h2 className={styles.title}>Dependency Management: tu aplicación depende de mucho más que tu código</h2><div className={styles.meta} aria-label="Metadatos"><span className={`${styles.chip} ${styles.chipOk}`}>5 min</span><span className={styles.chip}>Nivel: intermedio</span><span className={`${styles.chip} ${styles.chipPro}`}>Dependencias</span><span className={styles.chip}>.NET</span><span className={styles.chip}>QA</span></div><p className={styles.lead}>Investiga qué necesita tu backend para ejecutarse y operar antes de atribuir a un bug lo que cambió entre entornos.</p></div>
@@ -165,7 +165,7 @@ export default function Daily185Client() {
         {section.id === "challenge" && <details className={styles.proDetails}><summary>Ver respuesta razonada</summary><div className={styles.proBody}>El runtime 8 no satisface el target net10.0 del artefacto framework-dependent. Comprueba el target publicado y los runtimes del entorno que lo ejecuta. La diferencia PostgreSQL 17/15 merece revisión, pero no prueba un fallo: verifica proveedor, funciones SQL, esquema y datos utilizados. Self-contained elimina la necesidad del runtime .NET preinstalado, pero sigue dependiendo de plataforma, librerías nativas, configuración y servicios.</div></details>}
       </div></section>)}
       <div className={styles.relatedLinks}><a className={styles.pill} href="https://learn.microsoft.com/en-us/dotnet/core/deploying/">Referencia: publicar .NET</a><a className={styles.pill} href="https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-package-list">Referencia: paquetes NuGet</a><a className={styles.pill} href="https://docs.docker.com/build/building/best-practices/">Referencia: versiones de imágenes</a><a className={styles.pill} href="https://www.odoo.com/documentation/17.0/developer/reference/backend/module.html">Referencia: manifiesto Odoo 17</a><a className={styles.pill} href="https://pip.pypa.io/en/stable/cli/pip_check/">Referencia: pip check</a><Link className={styles.pill} href="/daily/91">Día 91: entorno Docker</Link><Link className={styles.pill} href="/daily/178">Día 178: puertos y exposición</Link></div>
-      <div className={styles.footerNav}><Link className={styles.btn} href="/daily/184"><span className={styles.kbd}>←</span> Día 184</Link><Link className={styles.btn} href="/daily">Ver archivo</Link><Link className={styles.btn} href="/calendar">Ver calendario</Link></div>
+      <div className={styles.footerNav}><Link className={styles.btn} href="/daily/184"><span className={styles.kbd}>←</span> Día 184</Link><Link className={styles.btn} href="/daily">Ver archivo</Link><Link className={styles.btn} href="/calendar">Ver calendario</Link><Link className={styles.btn} href="/daily/186">Día 186 <span className={styles.kbd}>→</span></Link></div>
     </div></article></div></main>
   </div>;
 }

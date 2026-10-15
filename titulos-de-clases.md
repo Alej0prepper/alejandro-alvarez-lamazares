@@ -2,7 +2,7 @@
 
 Índice consolidado de las clases disponibles en `app/daily`. Los títulos se obtienen de los metadatos de cada página.
 
-Hay 179 clases publicadas. No existen carpetas para los días 1–3, 150, 163 ni 167; la clase 4 no tiene un tema específico en sus metadatos.
+Hay 180 clases publicadas. No existen carpetas para los días 1–3, 150, 163 ni 167; la clase 4 no tiene un tema específico en sus metadatos.
 
 - [Clase 4: Sin título especificado](/daily/4)
 - [Clase 5: Idempotencia](/daily/5)
@@ -184,3 +184,4 @@ Hay 179 clases publicadas. No existen carpetas para los días 1–3, 150, 163 ni
 - [Clase 183: Fail Fast vs Best Effort: cuándo detenerse ante un error](/daily/183)
 - [Clase 184: Migraciones de software: código compatible ≠ datos compatibles](/daily/184)
 - [Clase 185: Dependency Management: tu aplicación depende de mucho más que tu código](/daily/185)
+- [Clase 186: Cómo auditar un backend que no desarrollaste tú](/daily/186)

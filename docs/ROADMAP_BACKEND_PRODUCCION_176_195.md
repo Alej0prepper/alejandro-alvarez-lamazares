@@ -2,7 +2,7 @@
 
 ## Estado
 
-Plan de las proximas clases diarias. Los dias 176–185 ya estan publicados; los dias 186–195 permanecen planificados. Cuando se implemente una clase, se creara su ruta `app/daily/<dia>/`, se incorporara al calendario siguiendo la convencion existente y se actualizara el indice de clases publicadas.
+Plan de las proximas clases diarias. Los dias 176–186 ya estan publicados; los dias 187–195 permanecen planificados. Cuando se implemente una clase, se creara su ruta `app/daily/<dia>/`, se incorporara al calendario siguiendo la convencion existente y se actualizara el indice de clases publicadas.
 
 ## Proposito del bloque
 
@@ -30,7 +30,7 @@ Nunca se deben publicar IPs, dominios, usuarios, credenciales, backups, configur
 | 183 | Fail Fast vs Best Effort: cuando detenerse ante un error **(publicada)** | Decidir segun dependencia y consistencia, registrar resultados parciales y no aprobar un restore incompleto. |
 | 184 | Migraciones de software: codigo compatible no equivale a datos compatibles **(publicada)** | Coordinar codigo, esquema y datos historicos con PostgreSQL y EF Core; aplicar el criterio a actualizaciones de modulos y versiones de Odoo. |
 | 185 | Gestion de dependencias: aplicacion, Python y sistema **(publicada)** | Auditar addons y dependencias sin instalar paquetes a ciegas. |
-| 186 | Como auditar un sistema que no desarrollaste | Reconstruir alcance, riesgos y limites con acceso de solo observacion. |
+| 186 | Como auditar un backend que no desarrollaste tu **(publicada)** | Reconstruir alcance, riesgos y limites con acceso de solo observacion. |
 | 187 | Feature discovery: reconstruir un sistema desde UI, codigo y base de datos | Correlacionar modulos instalados, comportamiento visible y persistencia. |
 | 188 | Configuracion vs codigo: por que el mismo software cambia entre entornos | Detectar deriva entre local, VPS y produccion sin confundirla con logica de negocio. |
 | 189 | Logs como herramienta de investigacion backend | Usar contexto, correlacion y niveles de log para formar y comprobar hipotesis. |

@@ -663,6 +663,11 @@ const plannedLessons = [
     href: "/daily/185",
   },
   {
+    date: "2026-10-15",
+    title: "Leccion 186: Cómo auditar un backend que no desarrollaste tú",
+    href: "/daily/186",
+  },
+  {
     date: "2026-09-11",
     title: "Leccion 174: Integraciones, notificaciones, auditoria y reportes en Odoo 17",
     href: "/daily/174",
