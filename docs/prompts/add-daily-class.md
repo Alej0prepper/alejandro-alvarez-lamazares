@@ -2,6 +2,8 @@ Quiero que añadas al repositorio la siguiente clase diaria del curso, siguiendo
 
 Antes de modificar archivos, revisa la estructura real del repositorio, las instrucciones del proyecto, las páginas de las clases más recientes y la forma en que el calendario, el índice y la navegación registran las clases. Usa como referencia principal las implementaciones más recientes que existan en `app/daily`; no copies una plantilla antigua si contradice el estándar vigente.
 
+Consulta el [documento consolidado de nombres de todas las clases](../../titulos-de-clases.md) para conocer los temas existentes y evitar repeticiones. Su ruta desde la raíz del repositorio es `titulos-de-clases.md`. Contrástalo con las páginas reales antes de decidir la siguiente clase y déjalo actualizado como parte de la entrega.
+
 Determina el número de la clase a partir de las carpetas y páginas que realmente existen. Comprueba también los números y temas registrados en los índices y calendarios para no sobrescribir una clase, reutilizar un número ocupado ni crear enlaces rotos. Si hay índices desactualizados o diferencias entre ellos y las páginas existentes, resuelve la numeración usando la evidencia del repositorio y actualiza los registros que correspondan.
 
 Usa el tema, los materiales y el contexto que te proporcione después de este prompt. Si no incluyo un tema explícito, revisa el contexto de la conversación y la secuencia de clases del repositorio para determinar el siguiente tema lógico. No inventes datos sobre proyectos, experiencias o resultados que no estén respaldados por el contexto o por el repositorio.

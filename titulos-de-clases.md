@@ -2,7 +2,9 @@
 
 Índice consolidado de las clases disponibles en `app/daily`. Los títulos se obtienen de los metadatos de cada página.
 
-Hay 180 clases publicadas. No existen carpetas para los días 1–3, 150, 163 ni 167; la clase 4 no tiene un tema específico en sus metadatos.
+Cada entrada indica el número, el título y la ruta de la clase, en orden numérico. Mantén este documento al añadir o renombrar clases siguiendo el [prompt para añadir una clase diaria](docs/prompts/add-daily-class.md). El roadmap contiene la planificación futura y no forma parte de este listado.
+
+Hay 181 clases publicadas. No existen carpetas para los días 1–3, 150, 163 ni 167; la clase 4 no tiene un tema específico en sus metadatos.
 
 - [Clase 4: Sin título especificado](/daily/4)
 - [Clase 5: Idempotencia](/daily/5)
@@ -177,11 +179,11 @@ Hay 180 clases publicadas. No existen carpetas para los días 1–3, 150, 163 ni
 - [Clase 177: Reverse Proxy](/daily/177)
 - [Clase 178: Puertos e interfaces](/daily/178)
 - [Clase 179: Persistencia en Docker](/daily/179)
-
-- [Clase 180: Backups PostgreSQL: que hace realmente pg_dump](/daily/180)
-- [Clase 181: Restaurar una base no es ejecutar un .sql y esperar](/daily/181)
-- [Clase 182: Formatos de backup y compatibilidad de PostgreSQL](/daily/182)
-- [Clase 183: Fail Fast vs Best Effort: cuándo detenerse ante un error](/daily/183)
+- [Clase 180: Backups PostgreSQL](/daily/180)
+- [Clase 181: Restaurar y validar PostgreSQL](/daily/181)
+- [Clase 182: Formatos y compatibilidad de PostgreSQL](/daily/182)
+- [Clase 183: Fail Fast vs Best Effort](/daily/183)
 - [Clase 184: Migraciones de software: código compatible ≠ datos compatibles](/daily/184)
 - [Clase 185: Dependency Management: tu aplicación depende de mucho más que tu código](/daily/185)
 - [Clase 186: Cómo auditar un backend que no desarrollaste tú](/daily/186)
+- [Clase 187: Feature Discovery: reconstruir una funcionalidad existente](/daily/187)
