@@ -668,6 +668,11 @@ const plannedLessons = [
     href: "/daily/186",
   },
   {
+    date: "2026-10-22",
+    title: "Leccion 188: Configuración vs código: mismo software, distinto entorno",
+    href: "/daily/188",
+  },
+  {
     date: "2026-09-11",
     title: "Leccion 174: Integraciones, notificaciones, auditoria y reportes en Odoo 17",
     href: "/daily/174",

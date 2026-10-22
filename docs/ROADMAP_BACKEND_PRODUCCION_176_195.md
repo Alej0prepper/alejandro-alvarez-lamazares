@@ -2,7 +2,7 @@
 
 ## Estado
 
-Plan de las proximas clases diarias. Los dias 176–186 ya estan publicados; los dias 187–195 permanecen planificados. Cuando se implemente una clase, se creara su ruta `app/daily/<dia>/`, se incorporara al calendario siguiendo la convencion existente y se actualizara el indice de clases publicadas.
+Plan del bloque 176–195. El estado de publicacion se indica en la tabla; el dia 188 ya esta implementado y los dias 189–195 permanecen planificados. Al implementar una clase, se crea su ruta `app/daily/<dia>/`, se incorpora al calendario y se actualiza el indice de clases publicadas.
 
 ## Proposito del bloque
 
@@ -32,7 +32,7 @@ Nunca se deben publicar IPs, dominios, usuarios, credenciales, backups, configur
 | 185 | Gestion de dependencias: aplicacion, Python y sistema **(publicada)** | Auditar addons y dependencias sin instalar paquetes a ciegas. |
 | 186 | Como auditar un backend que no desarrollaste tu **(publicada)** | Reconstruir alcance, riesgos y limites con acceso de solo observacion. |
 | 187 | Feature discovery: reconstruir un sistema desde UI, codigo y base de datos | Correlacionar modulos instalados, comportamiento visible y persistencia. |
-| 188 | Configuracion vs codigo: por que el mismo software cambia entre entornos | Detectar deriva entre local, VPS y produccion sin confundirla con logica de negocio. |
+| 188 | Configuracion vs codigo: mismo software, distinto entorno **(publicada)** | Detectar deriva entre local, VPS y produccion sin confundirla con logica de negocio. |
 | 189 | Logs como herramienta de investigacion backend | Usar contexto, correlacion y niveles de log para formar y comprobar hipotesis. |
 | 190 | Health checks y diagnostico por capas | Diferenciar proceso activo, puerto abierto, HTTP disponible y aplicacion sana. |
 | 191 | Playwright desde la perspectiva backend y QA | Tratar el login E2E como evidencia sobre navegador, red, backend y sesion. |
