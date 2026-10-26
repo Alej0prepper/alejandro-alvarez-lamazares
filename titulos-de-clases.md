@@ -4,7 +4,7 @@
 
 Cada entrada indica el número, el título y la ruta de la clase, en orden numérico. Mantén este documento al añadir o renombrar clases siguiendo el [prompt para añadir una clase diaria](docs/prompts/add-daily-class.md). El roadmap contiene la planificación futura y no forma parte de este listado.
 
-Hay 183 clases publicadas. No existen carpetas para los días 1–3, 150, 163, 167 ni 189; la clase 4 no tiene un tema específico en sus metadatos.
+Hay 184 clases publicadas. No existen carpetas para los días 1–3, 150, 163, 167, 189 ni 191–198; la clase 4 no tiene un tema específico en sus metadatos.
 
 - [Clase 4: Sin título especificado](/daily/4)
 - [Clase 5: Idempotencia](/daily/5)
@@ -189,3 +189,4 @@ Hay 183 clases publicadas. No existen carpetas para los días 1–3, 150, 163, 1
 - [Clase 187: Feature Discovery: reconstruir una funcionalidad existente](/daily/187)
 - [Clase 188: Configuración vs código: mismo software, distinto entorno](/daily/188)
 - [Clase 190: Seguir una petición con un identificador de correlación](/daily/190)
+- [Clase 199: Construir una reproducción mínima](/daily/199)
