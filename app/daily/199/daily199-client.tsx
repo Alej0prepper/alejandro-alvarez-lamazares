@@ -106,7 +106,7 @@ const sections: LessonSection[] = [
     "chip": "Aprendizaje",
     "paragraphs": [
       "Regla mental: quita una cosa, ejecuta de nuevo y comprueba que sigue fallando por la misma razón.",
-      "Una reproducción mínima convierte un reporte amplio en un caso que puedes ejecutar, compartir y estudiar con precisión. En el día 200, todavía planificado, utilizaremos una comprobación repetible para encontrar qué cambio introdujo una regresión mediante git bisect."
+      "Una reproducción mínima convierte un reporte amplio en un caso que puedes ejecutar, compartir y estudiar con precisión. En el día 200 utilizaremos una comprobación repetible para encontrar qué cambio introdujo una regresión mediante git bisect."
     ]
   }
 ];
@@ -164,7 +164,7 @@ export default function Daily199Client() {
           </div>
         </details>}
       </div></section>)}
-      <div className={styles.relatedLinks}><Link className={styles.pill} href="/daily/15">Día 15: casos reales</Link><Link className={styles.pill} href="/daily/56">Día 56: manejo de errores</Link><Link className={styles.pill} href="/daily/190">Día 190: correlación</Link></div>
+      <div className={styles.relatedLinks}><Link className={styles.pill} href="/daily/200">Día 200: Git bisect</Link><Link className={styles.pill} href="/daily/15">Día 15: casos reales</Link><Link className={styles.pill} href="/daily/56">Día 56: manejo de errores</Link><Link className={styles.pill} href="/daily/190">Día 190: correlación</Link></div>
       <div className={styles.footerNav}><Link className={styles.btn} href="/daily/190"><span className={styles.kbd}>←</span> Día 190</Link><Link className={styles.btn} href="/daily">Ver archivo</Link><Link className={styles.btn} href="/calendar">Ver calendario</Link></div>
     </div></article></div></main>
   </div>;
