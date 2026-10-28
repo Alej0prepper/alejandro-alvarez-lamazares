@@ -118,7 +118,7 @@ const sections: LessonSection[] = [
     "chip": "Aprendizaje",
     "paragraphs": [
       "Regla mental: para encontrar cuándo cambió algo, comprueba siempre lo mismo en versiones diferentes.",
-      "Ya puedes localizar una regresión sin revisar todo el historial manualmente. En el día 201, todavía planificado, veremos cómo demostrar que una corrección resolvió el problema, comprobando la causa además del síntoma."
+      "Ya puedes localizar una regresión sin revisar todo el historial manualmente. En el día 201 veremos cómo demostrar que una corrección resolvió el problema, comprobando la causa además del síntoma."
     ]
   }
 ];
