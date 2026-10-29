@@ -106,7 +106,7 @@ const sections: LessonSection[] = [
     "paragraphs": [
       "Regla mental: reproduce el defecto, comprueba el resultado esperado y verifica los efectos del arreglo.",
       "La corrección queda respaldada cuando el mismo caso cumple el contrato y sus efectos están comprobados. Esa evidencia cubre los recorridos verificados; no demuestra que todo el sistema esté libre de errores.",
-      "En el día 202, todavía planificado, comenzamos otro bloque: separar el problema del usuario de la solución que solicita."
+      "En el día 202 comenzamos otro bloque: separar el problema del usuario de la solución que solicita."
     ]
   }
 ];
